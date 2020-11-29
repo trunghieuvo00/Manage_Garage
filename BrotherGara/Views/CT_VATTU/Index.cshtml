@@ -1,0 +1,58 @@
+﻿@model IEnumerable<BrotherGara.Models.CT_VATTU>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DonGia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThanhTien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PHIEUSUACHUA.MaTiepNhan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VATTU.TenVatTu)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonGia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ThanhTien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PHIEUSUACHUA.MaTiepNhan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VATTU.TenVatTu)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaCTVT }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaCTVT }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaCTVT })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,67 @@
+﻿@model BrotherGara.Models.NOIDUNGDOANHSO
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>NOIDUNGDOANHSO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuotSua)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuotSua)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThanhTien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThanhTien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TiLe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TiLe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HIEUXE.TenHieuXe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HIEUXE.TenHieuXe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PHIEUDOANHSO.MaTN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PHIEUDOANHSO.MaTN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PHIEUTHUTIEN.MaPSC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PHIEUTHUTIEN.MaPSC)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaNDDS }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

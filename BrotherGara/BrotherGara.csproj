@@ -46,10 +46,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -128,7 +128,22 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BAOCAOTONsController.cs" />
+    <Compile Include="Controllers\CT_TIENCONGController.cs" />
+    <Compile Include="Controllers\CT_VATTUController.cs" />
+    <Compile Include="Controllers\HIEUXEsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NOIDUNGDOANHSOesController.cs" />
+    <Compile Include="Controllers\NOIDUNGNHAPKHOesController.cs" />
+    <Compile Include="Controllers\PHIEUDOANHSOesController.cs" />
+    <Compile Include="Controllers\PHIEUNHAPKHOesController.cs" />
+    <Compile Include="Controllers\PHIEUSUACHUAsController.cs" />
+    <Compile Include="Controllers\PHIEUTHUTIENsController.cs" />
+    <Compile Include="Controllers\THAMSOesController.cs" />
+    <Compile Include="Controllers\THANGNAMsController.cs" />
+    <Compile Include="Controllers\TIENCONGsController.cs" />
+    <Compile Include="Controllers\TIEPNHANsController.cs" />
+    <Compile Include="Controllers\VATTUsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2110,6 +2125,81 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\BAOCAOTONs\Create.cshtml" />
+    <Content Include="Views\BAOCAOTONs\Delete.cshtml" />
+    <Content Include="Views\BAOCAOTONs\Details.cshtml" />
+    <Content Include="Views\BAOCAOTONs\Edit.cshtml" />
+    <Content Include="Views\BAOCAOTONs\Index.cshtml" />
+    <Content Include="Views\CT_TIENCONG\Create.cshtml" />
+    <Content Include="Views\CT_TIENCONG\Delete.cshtml" />
+    <Content Include="Views\CT_TIENCONG\Details.cshtml" />
+    <Content Include="Views\CT_TIENCONG\Edit.cshtml" />
+    <Content Include="Views\CT_TIENCONG\Index.cshtml" />
+    <Content Include="Views\CT_VATTU\Create.cshtml" />
+    <Content Include="Views\CT_VATTU\Delete.cshtml" />
+    <Content Include="Views\CT_VATTU\Details.cshtml" />
+    <Content Include="Views\CT_VATTU\Edit.cshtml" />
+    <Content Include="Views\CT_VATTU\Index.cshtml" />
+    <Content Include="Views\HIEUXEs\Create.cshtml" />
+    <Content Include="Views\HIEUXEs\Delete.cshtml" />
+    <Content Include="Views\HIEUXEs\Details.cshtml" />
+    <Content Include="Views\HIEUXEs\Edit.cshtml" />
+    <Content Include="Views\HIEUXEs\Index.cshtml" />
+    <Content Include="Views\NOIDUNGDOANHSOes\Create.cshtml" />
+    <Content Include="Views\NOIDUNGDOANHSOes\Delete.cshtml" />
+    <Content Include="Views\NOIDUNGDOANHSOes\Details.cshtml" />
+    <Content Include="Views\NOIDUNGDOANHSOes\Edit.cshtml" />
+    <Content Include="Views\NOIDUNGDOANHSOes\Index.cshtml" />
+    <Content Include="Views\NOIDUNGNHAPKHOes\Create.cshtml" />
+    <Content Include="Views\NOIDUNGNHAPKHOes\Delete.cshtml" />
+    <Content Include="Views\NOIDUNGNHAPKHOes\Details.cshtml" />
+    <Content Include="Views\NOIDUNGNHAPKHOes\Edit.cshtml" />
+    <Content Include="Views\NOIDUNGNHAPKHOes\Index.cshtml" />
+    <Content Include="Views\PHIEUDOANHSOes\Create.cshtml" />
+    <Content Include="Views\PHIEUDOANHSOes\Delete.cshtml" />
+    <Content Include="Views\PHIEUDOANHSOes\Details.cshtml" />
+    <Content Include="Views\PHIEUDOANHSOes\Edit.cshtml" />
+    <Content Include="Views\PHIEUDOANHSOes\Index.cshtml" />
+    <Content Include="Views\PHIEUNHAPKHOes\Create.cshtml" />
+    <Content Include="Views\PHIEUNHAPKHOes\Delete.cshtml" />
+    <Content Include="Views\PHIEUNHAPKHOes\Details.cshtml" />
+    <Content Include="Views\PHIEUNHAPKHOes\Edit.cshtml" />
+    <Content Include="Views\PHIEUNHAPKHOes\Index.cshtml" />
+    <Content Include="Views\PHIEUSUACHUAs\Create.cshtml" />
+    <Content Include="Views\PHIEUSUACHUAs\Delete.cshtml" />
+    <Content Include="Views\PHIEUSUACHUAs\Details.cshtml" />
+    <Content Include="Views\PHIEUSUACHUAs\Edit.cshtml" />
+    <Content Include="Views\PHIEUSUACHUAs\Index.cshtml" />
+    <Content Include="Views\PHIEUTHUTIENs\Create.cshtml" />
+    <Content Include="Views\PHIEUTHUTIENs\Delete.cshtml" />
+    <Content Include="Views\PHIEUTHUTIENs\Details.cshtml" />
+    <Content Include="Views\PHIEUTHUTIENs\Edit.cshtml" />
+    <Content Include="Views\PHIEUTHUTIENs\Index.cshtml" />
+    <Content Include="Views\THAMSOes\Create.cshtml" />
+    <Content Include="Views\THAMSOes\Delete.cshtml" />
+    <Content Include="Views\THAMSOes\Details.cshtml" />
+    <Content Include="Views\THAMSOes\Edit.cshtml" />
+    <Content Include="Views\THAMSOes\Index.cshtml" />
+    <Content Include="Views\THANGNAMs\Create.cshtml" />
+    <Content Include="Views\THANGNAMs\Delete.cshtml" />
+    <Content Include="Views\THANGNAMs\Details.cshtml" />
+    <Content Include="Views\THANGNAMs\Edit.cshtml" />
+    <Content Include="Views\THANGNAMs\Index.cshtml" />
+    <Content Include="Views\TIENCONGs\Create.cshtml" />
+    <Content Include="Views\TIENCONGs\Delete.cshtml" />
+    <Content Include="Views\TIENCONGs\Details.cshtml" />
+    <Content Include="Views\TIENCONGs\Edit.cshtml" />
+    <Content Include="Views\TIENCONGs\Index.cshtml" />
+    <Content Include="Views\TIEPNHANs\Create.cshtml" />
+    <Content Include="Views\TIEPNHANs\Delete.cshtml" />
+    <Content Include="Views\TIEPNHANs\Details.cshtml" />
+    <Content Include="Views\TIEPNHANs\Edit.cshtml" />
+    <Content Include="Views\TIEPNHANs\Index.cshtml" />
+    <Content Include="Views\VATTUs\Create.cshtml" />
+    <Content Include="Views\VATTUs\Delete.cshtml" />
+    <Content Include="Views\VATTUs\Details.cshtml" />
+    <Content Include="Views\VATTUs\Edit.cshtml" />
+    <Content Include="Views\VATTUs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

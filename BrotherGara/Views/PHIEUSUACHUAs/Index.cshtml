@@ -1,0 +1,46 @@
+﻿@model IEnumerable<BrotherGara.Models.PHIEUSUACHUA>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NgaySuaChua)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TongTien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TIEPNHAN.BienSo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgaySuaChua)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TongTien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TIEPNHAN.BienSo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaPSC }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaPSC }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaPSC })
+        </td>
+    </tr>
+}
+
+</table>

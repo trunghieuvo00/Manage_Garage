@@ -1,0 +1,35 @@
+﻿@model BrotherGara.Models.TIENCONG
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TIENCONG</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenTienCong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenTienCong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TienCong1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TienCong1)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaTienCong }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
