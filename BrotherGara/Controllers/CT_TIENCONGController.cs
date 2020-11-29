@@ -15,9 +15,10 @@ namespace BrotherGara.Controllers
         private BrothersGarageEntities db = new BrothersGarageEntities();
 
         // GET: CT_TIENCONG
-        public ActionResult Index()
+        public ActionResult Index(string id)
         {
-            var cT_TIENCONG = db.CT_TIENCONG.Include(c => c.PHIEUSUACHUA).Include(c => c.TIENCONG1);
+            var cT_TIENCONG = db.CT_TIENCONG.Include(c => c.PHIEUSUACHUA).Include(c => c.TIENCONG1).Where(c => c.MaPSC == id);
+            ViewBag.MaPSC = id;
             return View(cT_TIENCONG.ToList());
         }
 
@@ -37,11 +38,13 @@ namespace BrotherGara.Controllers
         }
 
         // GET: CT_TIENCONG/Create
-        public ActionResult Create()
+        public ActionResult Create(string id)
         {
             ViewBag.MaPSC = new SelectList(db.PHIEUSUACHUAs, "MaPSC", "MaTiepNhan");
             ViewBag.MaTienCong = new SelectList(db.TIENCONGs, "MaTienCong", "TenTienCong");
-            return View();
+            CT_TIENCONG model = new CT_TIENCONG();
+            model.MaPSC = id;
+            return View(model);
         }
 
         // POST: CT_TIENCONG/Create
@@ -55,7 +58,7 @@ namespace BrotherGara.Controllers
             {
                 db.CT_TIENCONG.Add(cT_TIENCONG);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { @id = cT_TIENCONG.MaPSC });
             }
 
             ViewBag.MaPSC = new SelectList(db.PHIEUSUACHUAs, "MaPSC", "MaTiepNhan", cT_TIENCONG.MaPSC);

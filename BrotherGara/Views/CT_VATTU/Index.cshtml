@@ -8,7 +8,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", new { id = ViewBag.MaPSC })
 </p>
 <table class="table">
     <tr>
@@ -30,29 +30,30 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.DonGia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SoLuong)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ThanhTien)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PHIEUSUACHUA.MaTiepNhan)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.VATTU.TenVatTu)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaCTVT }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaCTVT }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaCTVT })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonGia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThanhTien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PHIEUSUACHUA.MaTiepNhan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VATTU.TenVatTu)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MaCTVT }) |
+                @Html.ActionLink("Details", "Details", new { id = item.MaCTVT }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MaCTVT })
+            </td>
+        </tr>
+    }
 
 </table>

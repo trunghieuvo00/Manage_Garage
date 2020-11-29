@@ -2165,11 +2165,6 @@
     <Content Include="Views\PHIEUNHAPKHOes\Details.cshtml" />
     <Content Include="Views\PHIEUNHAPKHOes\Edit.cshtml" />
     <Content Include="Views\PHIEUNHAPKHOes\Index.cshtml" />
-    <Content Include="Views\PHIEUSUACHUAs\Create.cshtml" />
-    <Content Include="Views\PHIEUSUACHUAs\Delete.cshtml" />
-    <Content Include="Views\PHIEUSUACHUAs\Details.cshtml" />
-    <Content Include="Views\PHIEUSUACHUAs\Edit.cshtml" />
-    <Content Include="Views\PHIEUSUACHUAs\Index.cshtml" />
     <Content Include="Views\PHIEUTHUTIENs\Create.cshtml" />
     <Content Include="Views\PHIEUTHUTIENs\Delete.cshtml" />
     <Content Include="Views\PHIEUTHUTIENs\Details.cshtml" />
@@ -2200,6 +2195,11 @@
     <Content Include="Views\VATTUs\Details.cshtml" />
     <Content Include="Views\VATTUs\Edit.cshtml" />
     <Content Include="Views\VATTUs\Index.cshtml" />
+    <Content Include="Views\PHIEUSUACHUAs\Create.cshtml" />
+    <Content Include="Views\PHIEUSUACHUAs\Delete.cshtml" />
+    <Content Include="Views\PHIEUSUACHUAs\Details.cshtml" />
+    <Content Include="Views\PHIEUSUACHUAs\Edit.cshtml" />
+    <Content Include="Views\PHIEUSUACHUAs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

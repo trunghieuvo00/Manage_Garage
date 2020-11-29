@@ -17,7 +17,7 @@ namespace BrotherGara.Controllers
         // GET: PHIEUSUACHUAs
         public ActionResult Index()
         {
-            var pHIEUSUACHUAs = db.PHIEUSUACHUAs.Include(p => p.TIEPNHAN);
+            var pHIEUSUACHUAs = db.PHIEUSUACHUAs;
             return View(pHIEUSUACHUAs.ToList());
         }
 
@@ -130,3 +130,4 @@ namespace BrotherGara.Controllers
         }
     }
 }
+

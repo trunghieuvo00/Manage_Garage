@@ -15,9 +15,10 @@ namespace BrotherGara.Controllers
         private BrothersGarageEntities db = new BrothersGarageEntities();
 
         // GET: CT_VATTU
-        public ActionResult Index()
+        public ActionResult Index(string id)
         {
-            var cT_VATTU = db.CT_VATTU.Include(c => c.PHIEUSUACHUA).Include(c => c.VATTU);
+            var cT_VATTU = db.CT_VATTU.Include(c => c.PHIEUSUACHUA).Include(c => c.VATTU).Where(c => c.MaPSC == id);
+            ViewBag.MaPSC = id;
             return View(cT_VATTU.ToList());
         }
 
@@ -37,11 +38,13 @@ namespace BrotherGara.Controllers
         }
 
         // GET: CT_VATTU/Create
-        public ActionResult Create()
+        public ActionResult Create(string id)
         {
-            ViewBag.MaPSC = new SelectList(db.PHIEUSUACHUAs, "MaPSC", "MaTiepNhan");
+            ViewBag.MaPSC = id;
             ViewBag.MaVatTu = new SelectList(db.VATTUs, "MaVatTu", "TenVatTu");
-            return View();
+            CT_VATTU model = new CT_VATTU();
+            model.MaPSC = id;
+            return View(model);
         }
 
         // POST: CT_VATTU/Create
@@ -54,8 +57,9 @@ namespace BrotherGara.Controllers
             if (ModelState.IsValid)
             {
                 db.CT_VATTU.Add(cT_VATTU);
+
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { @id = cT_VATTU.MaPSC });
             }
 
             ViewBag.MaPSC = new SelectList(db.PHIEUSUACHUAs, "MaPSC", "MaTiepNhan", cT_VATTU.MaPSC);
