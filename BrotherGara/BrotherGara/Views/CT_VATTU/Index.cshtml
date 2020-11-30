@@ -1,0 +1,75 @@
+﻿@model IEnumerable<BrotherGara.Models.CT_VATTU>
+
+@{
+    ViewBag.Title = "Chi tiết vật tư";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="content">
+    <div class="container-fluid">
+        <h2>Chi tiết vật tư</h2>
+
+        <p>
+            @Html.ActionLink("Thêm Chi tiết vật tư", "Create", new { id = ViewBag.MaPSC }, new { @class = "btn btn-success" })
+        </p>
+        @Html.ActionLink("Quay lại", "Index", "PHIEUSUACHUAs")
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Danh sách vật tư</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Mã tiếp nhận
+                                </th>
+                                <th>
+                                    Tên vật tư
+                                </th>
+                                <th>
+                                    Đơn giá
+                                </th>
+                                <th>
+                                    Số lượng
+                                </th>
+                                <th>
+                                    Thành tiền
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PHIEUSUACHUA.MaTiepNhan)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.VATTU.TenVatTu)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DonGia)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.SoLuong)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ThanhTien)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Sửa", "Edit", new { id = item.MaCTVT }, new { @class = "btn btn-success" })
+                                        @Html.ActionLink("Chi tiết", "Details", new { id = item.MaCTVT }, new { @class = "btn btn-info" })
+                                        @Html.ActionLink("Xóa", "Delete", new { id = item.MaCTVT }, new { @class = "btn btn-danger" })
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

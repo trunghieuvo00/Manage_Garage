@@ -1,0 +1,64 @@
+﻿@model IEnumerable<BrotherGara.Models.NOIDUNGDOANHSO>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuotSua)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThanhTien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TiLe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HIEUXE.TenHieuXe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PHIEUDOANHSO.MaTN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PHIEUTHUTIEN.MaPSC)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuotSua)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ThanhTien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TiLe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HIEUXE.TenHieuXe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PHIEUDOANHSO.MaTN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PHIEUTHUTIEN.MaPSC)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaNDDS }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaNDDS }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaNDDS })
+        </td>
+    </tr>
+}
+
+</table>

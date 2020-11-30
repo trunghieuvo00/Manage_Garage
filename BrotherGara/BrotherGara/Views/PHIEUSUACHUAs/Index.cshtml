@@ -1,0 +1,67 @@
+﻿@model IEnumerable<BrotherGara.Models.PHIEUSUACHUA>
+
+@{
+    ViewBag.Title = "Phiếu sửa chữa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="content">
+    <div class="container-fluid">
+        <h2>Phiếu sửa chữa</h2>
+
+        <p>
+            @Html.ActionLink("Thêm Phiếu sửa chữa", "Create", null, new { @class = "btn btn-success" })
+        </p>
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Danh sách phiểu thu tiền</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Mã phiếu sửa chữa
+                                </th>
+                                <th>
+                                    Mã tiếp nhận
+                                </th>
+                                <th>
+                                    Ngày sửa chữa
+                                </th>
+                                <th>
+                                    Tổng tiền
+                                </th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MaPSC)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MaTiepNhan)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NgaySuaChua)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TongTien)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Chi tiết vật tư", "Index", "CT_VATTU", new { id = item.MaPSC }, new { @class = "btn btn-success" })
+                                    @Html.ActionLink("Chi tiết tiền công", "Index", "CT_TIENCONG", new { id = item.MaPSC }, new { @class = "btn btn-info" })
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

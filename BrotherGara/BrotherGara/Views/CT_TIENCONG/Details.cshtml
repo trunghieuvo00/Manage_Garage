@@ -1,0 +1,43 @@
+﻿@model BrotherGara.Models.CT_TIENCONG
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CT_TIENCONG</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TienCong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TienCong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PHIEUSUACHUA.MaTiepNhan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PHIEUSUACHUA.MaTiepNhan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TIENCONG1.TenTienCong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIENCONG1.TenTienCong)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaCTTC }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

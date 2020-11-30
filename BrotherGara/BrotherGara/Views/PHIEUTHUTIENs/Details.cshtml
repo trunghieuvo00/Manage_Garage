@@ -1,0 +1,51 @@
+﻿@model BrotherGara.Models.PHIEUTHUTIEN
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PHIEUTHUTIEN</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayThuTien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayThuTien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoTienThu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoTienThu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PHIEUSUACHUA.MaTiepNhan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PHIEUSUACHUA.MaTiepNhan)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaPTT }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

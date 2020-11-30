@@ -1,0 +1,43 @@
+﻿@model BrotherGara.Models.PHIEUSUACHUA
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PHIEUSUACHUA</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NgaySuaChua)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgaySuaChua)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TongTien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TongTien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TIEPNHAN.BienSo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIEPNHAN.BienSo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaPSC }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
