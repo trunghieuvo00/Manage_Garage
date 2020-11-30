@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\2020-2021\HK1\SE104 Nhập môn Công nghệ Phần mềm\BrotherGara\BrotherGara\Models\Database.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\Data of study\CNPM\QuanLiGara\QuanLiGara\BrotherGara\Models\Database.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
