@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿// T4 code generation is enabled for model 'D:\Data of study\CNPM\QuanLiGara\QuanLiGara\BrotherGara\Models\Database.edmx'. 
+=======
+﻿// T4 code generation is enabled for model 'F:\CNPM\BrotherGara\BrotherGara\Models\Database.edmx'. 
+>>>>>>> LapPhieuThu
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

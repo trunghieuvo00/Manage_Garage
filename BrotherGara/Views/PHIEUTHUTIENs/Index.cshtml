@@ -1,52 +1,69 @@
 ﻿@model IEnumerable<BrotherGara.Models.PHIEUTHUTIEN>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Phiếu Thu Tiền";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<div id="content">
+    <div class="container-fluid">
+        <h2 >Phiếu thu tiền</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.NgayThuTien)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SoTienThu)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ConNo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PHIEUSUACHUA.MaTiepNhan)
-        </th>
-        <th></th>
-    </tr>
+        <p>
+            @Html.ActionLink("Thêm Phiếu thu", "Create", null, new { @class = "btn btn-success" })
+        </p>
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Danh sách phiểu thu tiền</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Mã phiếu thu
+                                </th>
+                                <th>
+                                    Mã sửa chửa
+                                </th>
+                                <th>
+                                    Ngày thu tiền
+                                </th>
+                                <th>
+                                    Số tiền thu
+                                </th>
+                            </tr>   
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.MaPTT)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.MaPSC)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.NgayThuTien)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.SoTienThu)
+                                    </td>
+                                    @*<td>
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.MaPTT }) |
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.MaPTT })
+                                    </td>*@
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NgayThuTien)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SoTienThu)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ConNo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PHIEUSUACHUA.MaTiepNhan)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaPTT }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaPTT }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaPTT })
-        </td>
-    </tr>
-}
+    </div>
+    <!-- /.container-fluid -->
 
-</table>
+</div>

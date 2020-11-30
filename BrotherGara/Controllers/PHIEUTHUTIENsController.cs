@@ -39,7 +39,7 @@ namespace BrotherGara.Controllers
         // GET: PHIEUTHUTIENs/Create
         public ActionResult Create()
         {
-            ViewBag.MaPSC = new SelectList(db.PHIEUSUACHUAs, "MaPSC", "MaTiepNhan");
+            ViewBag.MaPSC = new SelectList(db.PHIEUSUACHUAs, "MaPSC", "MaPSC");
             return View();
         }
 
