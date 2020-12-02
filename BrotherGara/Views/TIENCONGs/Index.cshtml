@@ -5,24 +5,89 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<button class="btn btn-success ml-4 mb-3 brighter" style="width: 200px; color:azure; background-color: #61a0ed">
+    <i class="fas fa-plus" style="color: azure">
+        @Html.ActionLink("Thêm loại tiền công", "Create", null, new { @style = "color: #ffffff; font-family: Nunito;" })
+    </i>
+</button>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TenTienCong)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TienCong1)
-        </th>
-        <th></th>
-    </tr>
+<div id="content">
+    <div class="container-fluid">
 
-@foreach (var item in Model) {
+
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h3 class="m-0 font-weight-bold text-primary">Danh sách tiền công</h3>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Mã tiền công
+                                </th>
+                                <th>
+                                    Tên tiền công
+                                </th>
+                                <th>
+                                    Giá tiền công
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.MaTienCong)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TenTienCong)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TienCong1)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Sửa", "Edit", new { id = item.MaTienCong }, new { @class = "btn btn-success" })
+                                        @Html.ActionLink("Chi tiết", "Details", new { id = item.MaTienCong }, new { @class = "btn btn-info" })
+                                        @Html.ActionLink("Xóa", "Delete", new { id = item.MaTienCong }, new { @class = "btn btn-danger" })
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                Mã tiền công
+            </th>
+            <th>
+                Tên tiền công
+            </th>
+            <th>
+                Giá tiền công
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaTienCong)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.TenTienCong)
         </td>
@@ -30,11 +95,11 @@
             @Html.DisplayFor(modelItem => item.TienCong1)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaTienCong }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaTienCong }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaTienCong })
+            @Html.ActionLink("Edit", "Edit", new { id = item.MaTienCong }) |
+            @Html.ActionLink("Details", "Details", new { id = item.MaTienCong }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.MaTienCong })
         </td>
     </tr>
-}
+    }
 
-</table>
+    </table>*@

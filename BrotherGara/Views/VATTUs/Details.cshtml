@@ -5,14 +5,20 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>VATTU</h4>
+<div style="width: 500px; margin: auto">
+    <h3 style="text-align: center">Chi tiết vật tư</h3>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.TenVatTu)
+            Mã vật tư
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaVatTu)
+        </dd>
+
+        <dt>
+            Tên vật tư
         </dt>
 
         <dd>
@@ -20,7 +26,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.SoLuong)
+            Số lượng
         </dt>
 
         <dd>
@@ -28,7 +34,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DonGia)
+            Đơn giá
         </dt>
 
         <dd>
@@ -36,8 +42,7 @@
         </dd>
 
     </dl>
+    <div class="d-flex justify-content-center">
+        @Html.ActionLink("Quay lại", "Index", null, new { @class = "btn btn-success m-2 brighter", @style = "width: 150px; color:azure; background-color: #61a0ed" })
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MaVatTu }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
