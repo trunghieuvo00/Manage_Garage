@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+@*<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -13,64 +13,155 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.BienSo)
+            Biển số
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TenChuXe)
+            Tên chủ xe
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DiaChi)
+            Địa chỉ
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DienThoai)
+            Điện thoại
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NgayTiepNhan)
+            Ngày tiếp nhận
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TienNo)
+            Tiền nợ
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Email)
+            Email
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.HIEUXE.TenHieuXe)
+            Tên hiệu xe
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.BienSo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TenChuXe)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DiaChi)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DienThoai)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NgayTiepNhan)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TienNo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HIEUXE.TenHieuXe)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaTiepNhan }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaTiepNhan }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaTiepNhan })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BienSo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenChuXe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiaChi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DienThoai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayTiepNhan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TienNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HIEUXE.TenHieuXe)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MaTiepNhan }) |
+                @Html.ActionLink("Details", "Details", new { id = item.MaTiepNhan }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MaTiepNhan })
+            </td>
+        </tr>
+    }
 
-</table>
+</table>*@
+
+
+<button class="btn btn-success ml-4 mb-3 brighter" style="width: 200px; color:azure; background-color: #61a0ed">
+    <i class="fas fa-plus" style="color: azure">
+        @Html.ActionLink("Thêm phiếu tiếp nhận", "Create", null, new { @style = "color: #ffffff; font-family: Nunito;" })
+    </i>
+</button>
+
+<div id="content">
+    <div class="container-fluid">
+
+
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h3 class="m-0 font-weight-bold text-primary">Danh sách phiếu tiếp nhận</h3>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Biển số
+                                </th>
+                                <th>
+                                    Tên chủ xe
+                                </th>
+                                <th>
+                                    Địa chỉ
+                                </th>
+                                <th>
+                                    Điện thoại
+                                </th>
+                                <th>
+                                    Ngày tiếp nhận
+                                </th>
+                                <th>
+                                    Tiền nợ
+                                </th>
+                                <th>
+                                    Email
+                                </th>
+                                <th>
+                                    Tên hiệu xe
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.BienSo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TenChuXe)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DiaChi)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DienThoai)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NgayTiepNhan)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TienNo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Email)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.HIEUXE.TenHieuXe)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Sửa", "Edit", new { id = item.MaTiepNhan }, new { @class = "btn btn-success" })
+                                    @Html.ActionLink("Chi tiết", "Details", new { id = item.MaTiepNhan }, new { @class = "btn btn-info" })
+                                    @Html.ActionLink("Xóa", "Delete", new { id = item.MaTiepNhan }, new { @class = "btn btn-danger" })
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

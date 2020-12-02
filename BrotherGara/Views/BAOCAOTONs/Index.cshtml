@@ -5,48 +5,109 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TonDau)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PhatSinh)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TonCuoi)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.VATTU.TenVatTu)
-        </th>
-        <th></th>
-    </tr>
+<button class="btn btn-success ml-4 mb-3 brighter" style="width: 200px; color:azure; background-color: #61a0ed">
+    <i class="fas fa-plus" style="color: azure">
+        @Html.ActionLink("Thêm phiếu báo cáo tồn kho", "Create", null, new { @style = "color: #ffffff; font-family: Nunito;" })
+    </i>
+</button>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TonDau)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PhatSinh)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TonCuoi)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.VATTU.TenVatTu)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
+<div id="content">
+    <div class="container-fluid">
 
-</table>
+
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h3 class="m-0 font-weight-bold text-primary">Danh sách phiếu báo cáo tồn kho</h3>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Tồn đầu
+                                </th>
+                                <th>
+                                    Phát sinh
+                                </th>
+                                <th>
+                                    Tồn cuối
+                                </th>
+                                <th>
+                                    Tên vật tư
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TonDau)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PhatSinh)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TonCuoi)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.VATTU.TenVatTu)
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                Tồn đầu
+            </th>
+            <th>
+                Phát sinh
+            </th>
+            <th>
+                Tồn cuối
+            </th>
+            <th>
+                Tên vật tư
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TonDau)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhatSinh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TonCuoi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VATTU.TenVatTu)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+    </table>*@

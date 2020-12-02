@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+@*<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -14,7 +14,7 @@
     <tr>
         <th>Tên quy định</th>
         <th>
-            @Html.DisplayNameFor(model => model.GiaTri)
+            Giá trị
         </th>
         <th></th>
     </tr>
@@ -35,4 +35,49 @@
     </tr>
 }
 
-</table>
+</table>*@
+
+<div id="content">
+    <div class="container-fluid">
+
+       
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h3 class="m-0 font-weight-bold text-primary">Danh sách quy định</h3>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Tên quy định</th>
+                                <th>
+                                    Giá trị
+                                </th>
+                                <th style="width: auto"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TenThamSo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.GiaTri)
+                                </td>
+                                <td style="width: auto">
+                                    @Html.ActionLink("Sửa", "Edit", new { id = item.TenThamSo }, new { @class = "btn btn-success" })
+                                    @Html.ActionLink("Chi tiết", "Details", new { id = item.TenThamSo }, new { @class = "btn btn-info" })
+                                    @Html.ActionLink("Xóa", "Delete", new { id = item.TenThamSo }, new { @class = "btn btn-danger" })
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

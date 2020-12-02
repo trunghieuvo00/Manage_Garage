@@ -17,7 +17,7 @@ namespace BrotherGara.Controllers
         // GET: NOIDUNGDOANHSOes
         public ActionResult Index()
         {
-            var nOIDUNGDOANHSOes = db.NOIDUNGDOANHSOes.Include(n => n.HIEUXE).Include(n => n.PHIEUDOANHSO).Include(n => n.PHIEUTHUTIEN);
+            var nOIDUNGDOANHSOes = db.NOIDUNGDOANHSOes.Include(n => n.HIEUXE).Include(n => n.PHIEUDOANHSO);
             return View(nOIDUNGDOANHSOes.ToList());
         }
 
@@ -61,7 +61,7 @@ namespace BrotherGara.Controllers
 
             ViewBag.MaHieuXe = new SelectList(db.HIEUXEs, "MaHieuXe", "TenHieuXe", nOIDUNGDOANHSO.MaHieuXe);
             ViewBag.MaPDS = new SelectList(db.PHIEUDOANHSOes, "MaPDS", "MaTN", nOIDUNGDOANHSO.MaPDS);
-            ViewBag.MaPTT = new SelectList(db.PHIEUTHUTIENs, "MaPTT", "MaPSC", nOIDUNGDOANHSO.MaPTT);
+            ViewBag.MaPTT = new SelectList(db.PHIEUTHUTIENs, "MaPTT", "MaPSC", nOIDUNGDOANHSO.MaPDS);
             return View(nOIDUNGDOANHSO);
         }
 
@@ -79,7 +79,7 @@ namespace BrotherGara.Controllers
             }
             ViewBag.MaHieuXe = new SelectList(db.HIEUXEs, "MaHieuXe", "TenHieuXe", nOIDUNGDOANHSO.MaHieuXe);
             ViewBag.MaPDS = new SelectList(db.PHIEUDOANHSOes, "MaPDS", "MaTN", nOIDUNGDOANHSO.MaPDS);
-            ViewBag.MaPTT = new SelectList(db.PHIEUTHUTIENs, "MaPTT", "MaPSC", nOIDUNGDOANHSO.MaPTT);
+            ViewBag.MaPTT = new SelectList(db.PHIEUTHUTIENs, "MaPTT", "MaPSC", nOIDUNGDOANHSO.MaPDS);
             return View(nOIDUNGDOANHSO);
         }
 
@@ -98,7 +98,7 @@ namespace BrotherGara.Controllers
             }
             ViewBag.MaHieuXe = new SelectList(db.HIEUXEs, "MaHieuXe", "TenHieuXe", nOIDUNGDOANHSO.MaHieuXe);
             ViewBag.MaPDS = new SelectList(db.PHIEUDOANHSOes, "MaPDS", "MaTN", nOIDUNGDOANHSO.MaPDS);
-            ViewBag.MaPTT = new SelectList(db.PHIEUTHUTIENs, "MaPTT", "MaPSC", nOIDUNGDOANHSO.MaPTT);
+            ViewBag.MaPTT = new SelectList(db.PHIEUTHUTIENs, "MaPTT", "MaPSC", nOIDUNGDOANHSO.MaPDS);
             return View(nOIDUNGDOANHSO);
         }
 
