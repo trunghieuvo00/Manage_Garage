@@ -1,83 +1,99 @@
 ﻿@model BrotherGara.Models.TIEPNHAN
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Chi tiết phiếu tiếp nhận";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<style>
+    th, tr {
+        padding: 5px 0px;
+    }
+</style>
 
-<div>
-    <h4>TIEPNHAN</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.BienSo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BienSo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TenChuXe)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TenChuXe)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DiaChi)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DiaChi)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DienThoai)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DienThoai)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NgayTiepNhan)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NgayTiepNhan)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TienNo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TienNo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.HIEUXE.TenHieuXe)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.HIEUXE.TenHieuXe)
-        </dd>
-
-    </dl>
+<div class="container-fluid d-flex align-items-center justify-content-center">
+    <div style="width: 500px">
+        <h1 class="font-weight-bold">Chi tiết phiếu tiếp nhận</h1>
+        <table style="font-size: 20px" cellpatding="50px">
+            <tr>
+                <th>
+                    Mã tiếp nhận:
+                </th>
+                <td>
+                    @Html.DisplayFor(model => model.MaTiepNhan)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Biển số:
+                </th>
+                <td>
+                    @Html.DisplayFor(model => model.BienSo)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Tên chủ xe:
+                </th>
+                <td>
+                    @Html.DisplayFor(model => model.TenChuXe)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Tên hiệu xe:
+                </th>
+                <td>
+                    @Html.DisplayFor(model => model.HIEUXE.TenHieuXe)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Địa chỉ:
+                </th>
+                <td>
+                    @Html.DisplayFor(model => model.DiaChi)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Điện thoại:
+                </th>
+                <td>
+                    @Html.DisplayFor(model => model.DienThoai)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Ngày tiếp nhận:
+                </th>
+                <td>
+                    @Html.DisplayFor(model => model.NgayTiepNhan)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Email:
+                </th>
+                <td>
+                    @Html.DisplayFor(model => model.Email)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Tiền nợ:
+                </th>
+                <td>
+                    @Html.DisplayFor(model => model.TienNo)
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div>
+                        @Html.ActionLink("Quay lại", "Index", null, new { @class = "btn btn-success d-block m-auto", @style = "width: 100px" })
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MaTiepNhan }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
