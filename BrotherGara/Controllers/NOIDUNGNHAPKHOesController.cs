@@ -15,9 +15,13 @@ namespace BrotherGara.Controllers
         private BrothersGarageEntities db = new BrothersGarageEntities();
 
         // GET: NOIDUNGNHAPKHOes
-        public ActionResult Index()
+        public ActionResult Index(string id)
         {
-            var nOIDUNGNHAPKHOes = db.NOIDUNGNHAPKHOes.Include(n => n.PHIEUNHAPKHO).Include(n => n.VATTU).Include(n => n.THANGNAM);
+            var nOIDUNGNHAPKHOes = db.NOIDUNGNHAPKHOes.Include(n => n.PHIEUNHAPKHO).Include(n => n.VATTU).Include(n => n.THANGNAM).Where(c => c.MaPNK == id);
+            //var nOIDUNGNHAPKHOes = db.NOIDUNGNHAPKHOes.Select(x => x.MaPNK == mapnk)
+            //TempData["MaPNK"] = mapnk;
+            ViewBag.MaPNK = id;
+            ViewBag.MaTN = db.THANGNAMs.Select(x => x.MaTN);
             return View(nOIDUNGNHAPKHOes.ToList());
         }
 
@@ -37,12 +41,14 @@ namespace BrotherGara.Controllers
         }
 
         // GET: NOIDUNGNHAPKHOes/Create
-        public ActionResult Create()
+        public ActionResult Create(string id)
         {
-            ViewBag.MaPNK = new SelectList(db.PHIEUNHAPKHOes, "MaPNK", "MaPNK");
             ViewBag.MaVatTu = new SelectList(db.VATTUs, "MaVatTu", "TenVatTu");
             ViewBag.MaTN = new SelectList(db.THANGNAMs, "MaTN", "MaTN");
-            return View();
+            NOIDUNGNHAPKHO model = new NOIDUNGNHAPKHO();
+            model.MaPNK = id;
+            ViewBag.MaPNK = id;
+            return View(model);
         }
 
         // POST: NOIDUNGNHAPKHOes/Create
@@ -56,7 +62,8 @@ namespace BrotherGara.Controllers
             {
                 db.NOIDUNGNHAPKHOes.Add(nOIDUNGNHAPKHO);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { @id = nOIDUNGNHAPKHO.MaPNK });
+                //return Redirect($"/NOIDUNGNHAPKHOes/Index?mapnk={nOIDUNGNHAPKHO.MaPNK}");
             }
 
             ViewBag.MaPNK = new SelectList(db.PHIEUNHAPKHOes, "MaPNK", "MaPNK", nOIDUNGNHAPKHO.MaPNK);

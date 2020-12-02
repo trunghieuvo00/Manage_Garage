@@ -27,12 +27,14 @@ namespace BrotherGara.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PHIEUNHAPKHO pHIEUNHAPKHO = db.PHIEUNHAPKHOes.Find(id);
+            var pHIEUNHAPKHO = db.PHIEUNHAPKHOes.Find(id);
             if (pHIEUNHAPKHO == null)
             {
                 return HttpNotFound();
             }
-            return View(pHIEUNHAPKHO);
+
+            //return Redirect($"/NOIDUNGNHAPKHOes/Index?mapnk={pHIEUNHAPKHO.MaPNK}");
+            return RedirectToAction("Index", "NOIDUNGNHAPKHOes", new { @id = pHIEUNHAPKHO.MaPNK });
         }
 
         // GET: PHIEUNHAPKHOes/Create
@@ -50,6 +52,7 @@ namespace BrotherGara.Controllers
         {
             if (ModelState.IsValid)
             {
+                pHIEUNHAPKHO.TongChi = 0;
                 db.PHIEUNHAPKHOes.Add(pHIEUNHAPKHO);
                 db.SaveChanges();
                 return RedirectToAction("Index");

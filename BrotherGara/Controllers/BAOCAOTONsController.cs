@@ -37,10 +37,13 @@ namespace BrotherGara.Controllers
             return View(bAOCAOTON);
         }
 
+
+
         // GET: BAOCAOTONs/Create
         public ActionResult Create()
         {
             ViewBag.MaVatTu = new SelectList(db.VATTUs, "MaVatTu", "TenVatTu");
+            ViewBag.MaTN = new SelectList(db.THANGNAMs, "MaTN", "MaTN");
             return View();
         }
 
@@ -49,8 +52,9 @@ namespace BrotherGara.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaVatTu,MaTN,TonDau,PhatSinh,TonCuoi")] BAOCAOTON bAOCAOTON)
+        public ActionResult Create([Bind(Include = "MaVatTu,MaTN,TonDau,PhatSinhNhap,PhatSinhXuat,TonCuoi")] BAOCAOTON bAOCAOTON)
         {
+
             if (ModelState.IsValid)
             {
                 db.BAOCAOTONs.Add(bAOCAOTON);
@@ -83,7 +87,7 @@ namespace BrotherGara.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaVatTu,MaTN,TonDau,PhatSinh,TonCuoi")] BAOCAOTON bAOCAOTON)
+        public ActionResult Edit([Bind(Include = "MaVatTu,MaTN,TonDau,PhatSinhNhap,PhatSinhXuat,TonCuoi")] BAOCAOTON bAOCAOTON)
         {
             if (ModelState.IsValid)
             {
@@ -130,4 +134,6 @@ namespace BrotherGara.Controllers
             base.Dispose(disposing);
         }
     }
+
+
 }

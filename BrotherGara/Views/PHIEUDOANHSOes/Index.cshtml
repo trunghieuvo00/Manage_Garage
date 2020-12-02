@@ -5,36 +5,59 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<div id="content">
+    <div class="container-fluid">
+        <h2>Doanh số tháng</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TongDoanhThu)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.THANGNAM.MaTN)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TongDoanhThu)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.THANGNAM.MaTN)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaPDS }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaPDS }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaPDS })
-        </td>
-    </tr>
-}
-
-</table>
+        <p>
+            @Html.ActionLink("Tạo phiếu doanh số", "Create")
+            @Html.ActionLink("Tạo chi tiết doanh số", "Create", "NOIDUNGDOANHSOes")
+        </p>
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Danh sách vật tư</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Tháng
+                                </th>
+                                <th>
+                                    Năm
+                                </th>
+                                <th>
+                                    Tổng doanh thu
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.THANGNAM.Thang)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.THANGNAM.Nam)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TongDoanhThu)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.MaPDS }, new { @class = "btn btn-warning" }) |
+                                        @Html.ActionLink("Details", "Index", "NOIDUNGDOANHSOes", new { id = item.MaPDS }, htmlAttributes: new { @class = "btn btn-info" }) |
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.MaPDS }, htmlAttributes: new { @class = "btn btn-danger" })
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -13,6 +13,30 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model => model.MaPDS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaPDS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaHieuXe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaHieuXe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HIEUXE.TenHieuXe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HIEUXE.TenHieuXe)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.SoLuotSua)
         </dt>
 
@@ -36,33 +60,10 @@
             @Html.DisplayFor(model => model.TiLe)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.HIEUXE.TenHieuXe)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.HIEUXE.TenHieuXe)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PHIEUDOANHSO.MaTN)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PHIEUDOANHSO.MaTN)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PHIEUTHUTIEN.MaPSC)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PHIEUTHUTIEN.MaPSC)
-        </dd>
-
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">

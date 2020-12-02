@@ -8,7 +8,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Thêm chi tiết nhập kho", "Create", new { @id = ViewBag.MaPNK }, new { @class = "btn btn-success" })
 </p>
 <table class="table">
     <tr>
@@ -54,9 +54,9 @@
             @Html.DisplayFor(modelItem => item.THANGNAM.MaTN)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaNDNK }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaNDNK }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaNDNK })
+            @Html.ActionLink("Sửa", "Edit", new { id=item.MaNDNK }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.MaNDNK }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.MaNDNK })
         </td>
     </tr>
 }

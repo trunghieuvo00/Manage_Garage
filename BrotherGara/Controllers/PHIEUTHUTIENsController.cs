@@ -48,7 +48,7 @@ namespace BrotherGara.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaPTT,MaPSC,NgayThuTien,SoTienThu,ConNo")] PHIEUTHUTIEN pHIEUTHUTIEN)
+        public ActionResult Create([Bind(Include = "MaPTT,MaPSC,NgayThuTien,SoTienThu")] PHIEUTHUTIEN pHIEUTHUTIEN)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace BrotherGara.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaPTT,MaPSC,NgayThuTien,SoTienThu,ConNo")] PHIEUTHUTIEN pHIEUTHUTIEN)
+        public ActionResult Edit([Bind(Include = "MaPTT,MaPSC,NgayThuTien,SoTienThu")] PHIEUTHUTIEN pHIEUTHUTIEN)
         {
             if (ModelState.IsValid)
             {
