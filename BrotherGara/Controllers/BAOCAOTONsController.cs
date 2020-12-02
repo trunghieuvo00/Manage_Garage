@@ -12,6 +12,7 @@ namespace BrotherGara.Controllers
 {
     public class BAOCAOTONsController : Controller
     {
+        // cmt
         private BrothersGarageEntities db = new BrothersGarageEntities();
 
         // GET: BAOCAOTONs
