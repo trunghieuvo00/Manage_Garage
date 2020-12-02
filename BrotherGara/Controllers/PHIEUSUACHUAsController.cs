@@ -42,6 +42,11 @@ namespace BrotherGara.Controllers
             ViewBag.MaTiepNhan = new SelectList(db.TIEPNHANs, "MaTiepNhan", "MaTiepNhan");
             return View();
         }
+        public ActionResult CreateWithID(string id)
+        {
+            ViewBag.MaTiepNhan = new SelectList(db.TIEPNHANs.Where(t => t.MaTiepNhan == id), "MaTiepNhan", "MaTiepNhan", db.TIEPNHANs.Where(t => t.MaTiepNhan == id));
+            return View();
+        }
 
         // POST: PHIEUSUACHUAs/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
@@ -60,7 +65,20 @@ namespace BrotherGara.Controllers
             ViewBag.MaTiepNhan = new SelectList(db.TIEPNHANs, "MaTiepNhan", "BienSo", pHIEUSUACHUA.MaTiepNhan);
             return View(pHIEUSUACHUA);
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateWithID([Bind(Include = "MaPSC,MaTiepNhan,NgaySuaChua,TongTien")] PHIEUSUACHUA pHIEUSUACHUA)
+        {
+            if (ModelState.IsValid)
+            {
+                db.PHIEUSUACHUAs.Add(pHIEUSUACHUA);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
 
+            ViewBag.MaTiepNhan = new SelectList(db.TIEPNHANs, "MaTiepNhan", "BienSo", pHIEUSUACHUA.MaTiepNhan);
+            return View(pHIEUSUACHUA);
+        }
         // GET: PHIEUSUACHUAs/Edit/5
         public ActionResult Edit(string id)
         {
@@ -130,4 +148,3 @@ namespace BrotherGara.Controllers
         }
     }
 }
-

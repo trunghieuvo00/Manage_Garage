@@ -145,6 +145,66 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BAOCAOTON.cs">
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CT_TIENCONG.cs">
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CT_VATTU.cs">
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Database.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Database.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Database.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIEUXE.cs">
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NOIDUNGDOANHSO.cs">
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NOIDUNGNHAPKHO.cs">
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PHIEUDOANHSO.cs">
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PHIEUNHAPKHO.cs">
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PHIEUSUACHUA.cs">
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PHIEUTHUTIEN.cs">
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\THAMSO.cs">
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\THANGNAM.cs">
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TIENCONG.cs">
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TIEPNHAN.cs">
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VATTU.cs">
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1850,6 +1910,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\Database.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Database.edmx</DependentUpon>
+      <LastGenOutput>Database.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Database.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Database.edmx</DependentUpon>
+      <LastGenOutput>Database.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Assets\scss\navs\_global.scss" />
@@ -2024,6 +2094,13 @@
     <Content Include="Assets\vendor\fontawesome-free\webfonts\fa-solid-900.woff2" />
     <Content Include="Assets\vendor\jquery\jquery.min.map" />
     <Content Include="Assets\vendor\jquery\jquery.slim.min.map" />
+    <EntityDeploy Include="Models\Database.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Database.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Database.edmx.diagram">
+      <DependentUpon>Database.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2124,10 +2201,11 @@
     <Content Include="Views\PHIEUSUACHUAs\Details.cshtml" />
     <Content Include="Views\PHIEUSUACHUAs\Edit.cshtml" />
     <Content Include="Views\PHIEUSUACHUAs\Index.cshtml" />
+    <Content Include="Views\CT_TIENCONG\CreateWithId.cshtml" />
+    <Content Include="Views\CT_VATTU\CreateWithId.cshtml" />
+    <Content Include="Views\PHIEUSUACHUAs\CreateWithID.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

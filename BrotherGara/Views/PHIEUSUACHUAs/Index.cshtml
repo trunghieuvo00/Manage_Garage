@@ -12,6 +12,7 @@
         <p>
             @Html.ActionLink("Thêm Phiếu sửa chữa", "Create", null, new { @class = "btn btn-success" })
         </p>
+        @Html.ActionLink("Quay lại", null, null, null, new { href = Request.UrlReferrer })
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Danh sách phiểu thu tiền</h6>
@@ -39,24 +40,41 @@
                         <tbody>
                             @foreach (var item in Model)
                             {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.MaPSC)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.MaTiepNhan)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.NgaySuaChua)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.TongTien)
-                                </td>
-                                <td>
-                                    @Html.ActionLink("Chi tiết vật tư", "Index", "CT_VATTU", new { id = item.MaPSC }, new { @class = "btn btn-success" })
-                                    @Html.ActionLink("Chi tiết tiền công", "Index", "CT_TIENCONG", new { id = item.MaPSC }, new { @class = "btn btn-info" })
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.MaPSC)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.MaTiepNhan)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.NgaySuaChua.Day)/@Html.DisplayFor(modelItem => item.NgaySuaChua.Month)/@Html.DisplayFor(modelItem => item.NgaySuaChua.Year)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TongTien)
+                                    </td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Thêm
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="@Url.Action("CreateWithID", "CT_VATTU", new { @id = item.MaPSC })">Thêm chi tiết vật tư</a>
+                                                <a class="dropdown-item" href="@Url.Action("CreateWithID", "CT_TIENCONG", new { @id = item.MaPSC })">Thêm chi tiết tiền công</a>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div class="dropdown">
+                                            <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Chi tiết
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="@Url.Action("Index", "CT_VATTU", new { @id = item.MaPSC })">Chi tiết vật tư</a>
+                                                <a class="dropdown-item" href="@Url.Action("Index", "CT_TIENCONG", new { @id = item.MaPSC })">Chi tiết tiền công</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
                             }
                         </tbody>
                     </table>

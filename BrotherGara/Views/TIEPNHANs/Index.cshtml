@@ -65,6 +65,7 @@
                                         @Html.DisplayFor(modelItem => item.TienNo)
                                     </td>
                                     <td>
+                                        @Html.ActionLink("Thêm phiếu sửa chữa", "CreateWithId", "PHIEUSUACHUAs", new { @id = item.MaTiepNhan }, new { @class = "btn btn-primary" })
                                         @Html.ActionLink("Chi tiết", "Details", new { id = item.MaTiepNhan }, new { @class = "btn btn-info" })
                                     </td>
                                 </tr>
