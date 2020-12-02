@@ -16,7 +16,6 @@ namespace BrotherGara.Models
     {
         public string MaNDDS { get; set; }
         public string MaPDS { get; set; }
-        public string MaPTT { get; set; }
         public string MaHieuXe { get; set; }
         public Nullable<int> SoLuotSua { get; set; }
         public Nullable<decimal> ThanhTien { get; set; }
@@ -24,6 +23,5 @@ namespace BrotherGara.Models
     
         public virtual HIEUXE HIEUXE { get; set; }
         public virtual PHIEUDOANHSO PHIEUDOANHSO { get; set; }
-        public virtual PHIEUTHUTIEN PHIEUTHUTIEN { get; set; }
     }
 }
