@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BrothersGarageModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="BROTHERSGARAGE.MDFModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BAOCAOTON">
           <Key>
             <PropertyRef Name="MaVatTu" />
@@ -13,7 +13,8 @@
           <Property Name="MaVatTu" Type="char" MaxLength="8" Nullable="false" />
           <Property Name="MaTN" Type="char" MaxLength="8" Nullable="false" />
           <Property Name="TonDau" Type="int" />
-          <Property Name="PhatSinh" Type="int" />
+          <Property Name="PhatSinhNhap" Type="int" />
+          <Property Name="PhatSinhXuat" Type="int" />
           <Property Name="TonCuoi" Type="int" />
         </EntityType>
         <EntityType Name="CT_TIENCONG">
@@ -146,7 +147,7 @@
           <Property Name="SoLuong" Type="int" />
           <Property Name="DonGia" Type="money" />
         </EntityType>
-        <Association Name="FK__BAOCAOTON__MaVat__6DCC4D03">
+        <Association Name="FK__BAOCAOTON__MaVat__1209AD79">
           <End Role="VATTU" Type="Self.VATTU" Multiplicity="1" />
           <End Role="BAOCAOTON" Type="Self.BAOCAOTON" Multiplicity="*" />
           <ReferentialConstraint>
@@ -314,7 +315,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="BrothersGarageModelStoreContainer">
+        <EntityContainer Name="BROTHERSGARAGEMDFModelStoreContainer">
           <EntitySet Name="BAOCAOTON" EntityType="Self.BAOCAOTON" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CT_TIENCONG" EntityType="Self.CT_TIENCONG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CT_VATTU" EntityType="Self.CT_VATTU" Schema="dbo" store:Type="Tables" />
@@ -330,7 +331,7 @@
           <EntitySet Name="TIENCONG" EntityType="Self.TIENCONG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TIEPNHAN" EntityType="Self.TIEPNHAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VATTU" EntityType="Self.VATTU" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__BAOCAOTON__MaVat__6DCC4D03" Association="Self.FK__BAOCAOTON__MaVat__6DCC4D03">
+          <AssociationSet Name="FK__BAOCAOTON__MaVat__1209AD79" Association="Self.FK__BAOCAOTON__MaVat__1209AD79">
             <End Role="VATTU" EntitySet="VATTU" />
             <End Role="BAOCAOTON" EntitySet="BAOCAOTON" />
           </AssociationSet>
@@ -391,7 +392,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="BrothersGarageModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="BROTHERSGARAGE.MDFModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="BAOCAOTON">
           <Key>
             <PropertyRef Name="MaVatTu" />
@@ -400,9 +401,10 @@
           <Property Name="MaVatTu" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="MaTN" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="TonDau" Type="Int32" />
-          <Property Name="PhatSinh" Type="Int32" />
+          <Property Name="PhatSinhNhap" Type="Int32" />
+          <Property Name="PhatSinhXuat" Type="Int32" />
           <Property Name="TonCuoi" Type="Int32" />
-          <NavigationProperty Name="VATTU" Relationship="Self.FK__BAOCAOTON__MaVat__6DCC4D03" FromRole="BAOCAOTON" ToRole="VATTU" />
+          <NavigationProperty Name="VATTU" Relationship="Self.FK__BAOCAOTON__MaVat__1209AD79" FromRole="BAOCAOTON" ToRole="VATTU" />
         </EntityType>
         <EntityType Name="CT_TIENCONG">
           <Key>
@@ -557,11 +559,11 @@
           <Property Name="TenVatTu" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="SoLuong" Type="Int32" />
           <Property Name="DonGia" Type="Decimal" Precision="19" Scale="4" />
-          <NavigationProperty Name="BAOCAOTONs" Relationship="Self.FK__BAOCAOTON__MaVat__6DCC4D03" FromRole="VATTU" ToRole="BAOCAOTON" />
+          <NavigationProperty Name="BAOCAOTONs" Relationship="Self.FK__BAOCAOTON__MaVat__1209AD79" FromRole="VATTU" ToRole="BAOCAOTON" />
           <NavigationProperty Name="CT_VATTU" Relationship="Self.FK__CT_VATTU__MaVatT__55009F39" FromRole="VATTU" ToRole="CT_VATTU" />
           <NavigationProperty Name="NOIDUNGNHAPKHOes" Relationship="Self.FK__NOIDUNGNH__MaVat__671F4F74" FromRole="VATTU" ToRole="NOIDUNGNHAPKHO" />
         </EntityType>
-        <Association Name="FK__BAOCAOTON__MaVat__6DCC4D03">
+        <Association Name="FK__BAOCAOTON__MaVat__1209AD79">
           <End Role="VATTU" Type="Self.VATTU" Multiplicity="1" />
           <End Role="BAOCAOTON" Type="Self.BAOCAOTON" Multiplicity="*" />
           <ReferentialConstraint>
@@ -745,7 +747,7 @@
           <EntitySet Name="TIENCONGs" EntityType="Self.TIENCONG" />
           <EntitySet Name="TIEPNHANs" EntityType="Self.TIEPNHAN" />
           <EntitySet Name="VATTUs" EntityType="Self.VATTU" />
-          <AssociationSet Name="FK__BAOCAOTON__MaVat__6DCC4D03" Association="Self.FK__BAOCAOTON__MaVat__6DCC4D03">
+          <AssociationSet Name="FK__BAOCAOTON__MaVat__1209AD79" Association="Self.FK__BAOCAOTON__MaVat__1209AD79">
             <End Role="VATTU" EntitySet="VATTUs" />
             <End Role="BAOCAOTON" EntitySet="BAOCAOTONs" />
           </AssociationSet>
@@ -807,20 +809,21 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="BrothersGarageModelStoreContainer" CdmEntityContainer="BrothersGarageEntities">
+        <EntityContainerMapping StorageEntityContainer="BROTHERSGARAGEMDFModelStoreContainer" CdmEntityContainer="BrothersGarageEntities">
           <EntitySetMapping Name="BAOCAOTONs">
-            <EntityTypeMapping TypeName="BrothersGarageModel.BAOCAOTON">
+            <EntityTypeMapping TypeName="BROTHERSGARAGE.MDFModel.BAOCAOTON">
               <MappingFragment StoreEntitySet="BAOCAOTON">
                 <ScalarProperty Name="MaVatTu" ColumnName="MaVatTu" />
                 <ScalarProperty Name="MaTN" ColumnName="MaTN" />
                 <ScalarProperty Name="TonDau" ColumnName="TonDau" />
-                <ScalarProperty Name="PhatSinh" ColumnName="PhatSinh" />
+                <ScalarProperty Name="PhatSinhNhap" ColumnName="PhatSinhNhap" />
+                <ScalarProperty Name="PhatSinhXuat" ColumnName="PhatSinhXuat" />
                 <ScalarProperty Name="TonCuoi" ColumnName="TonCuoi" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CT_TIENCONG">
-            <EntityTypeMapping TypeName="BrothersGarageModel.CT_TIENCONG">
+            <EntityTypeMapping TypeName="BROTHERSGARAGE.MDFModel.CT_TIENCONG">
               <MappingFragment StoreEntitySet="CT_TIENCONG">
                 <ScalarProperty Name="MaCTTC" ColumnName="MaCTTC" />
                 <ScalarProperty Name="MaPSC" ColumnName="MaPSC" />
@@ -830,7 +833,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CT_VATTU">
-            <EntityTypeMapping TypeName="BrothersGarageModel.CT_VATTU">
+            <EntityTypeMapping TypeName="BROTHERSGARAGE.MDFModel.CT_VATTU">
               <MappingFragment StoreEntitySet="CT_VATTU">
                 <ScalarProperty Name="MaCTVT" ColumnName="MaCTVT" />
                 <ScalarProperty Name="MaPSC" ColumnName="MaPSC" />
@@ -842,7 +845,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="HIEUXEs">
-            <EntityTypeMapping TypeName="BrothersGarageModel.HIEUXE">
+            <EntityTypeMapping TypeName="BROTHERSGARAGE.MDFModel.HIEUXE">
               <MappingFragment StoreEntitySet="HIEUXE">
                 <ScalarProperty Name="MaHieuXe" ColumnName="MaHieuXe" />
                 <ScalarProperty Name="TenHieuXe" ColumnName="TenHieuXe" />
@@ -850,7 +853,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NOIDUNGDOANHSOes">
-            <EntityTypeMapping TypeName="BrothersGarageModel.NOIDUNGDOANHSO">
+            <EntityTypeMapping TypeName="BROTHERSGARAGE.MDFModel.NOIDUNGDOANHSO">
               <MappingFragment StoreEntitySet="NOIDUNGDOANHSO">
                 <ScalarProperty Name="MaNDDS" ColumnName="MaNDDS" />
                 <ScalarProperty Name="MaPDS" ColumnName="MaPDS" />
@@ -862,7 +865,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NOIDUNGNHAPKHOes">
-            <EntityTypeMapping TypeName="BrothersGarageModel.NOIDUNGNHAPKHO">
+            <EntityTypeMapping TypeName="BROTHERSGARAGE.MDFModel.NOIDUNGNHAPKHO">
               <MappingFragment StoreEntitySet="NOIDUNGNHAPKHO">
                 <ScalarProperty Name="MaNDNK" ColumnName="MaNDNK" />
                 <ScalarProperty Name="MaPNK" ColumnName="MaPNK" />
@@ -875,7 +878,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PHIEUDOANHSOes">
-            <EntityTypeMapping TypeName="BrothersGarageModel.PHIEUDOANHSO">
+            <EntityTypeMapping TypeName="BROTHERSGARAGE.MDFModel.PHIEUDOANHSO">
               <MappingFragment StoreEntitySet="PHIEUDOANHSO">
                 <ScalarProperty Name="MaPDS" ColumnName="MaPDS" />
                 <ScalarProperty Name="MaTN" ColumnName="MaTN" />
@@ -884,7 +887,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PHIEUNHAPKHOes">
-            <EntityTypeMapping TypeName="BrothersGarageModel.PHIEUNHAPKHO">
+            <EntityTypeMapping TypeName="BROTHERSGARAGE.MDFModel.PHIEUNHAPKHO">
               <MappingFragment StoreEntitySet="PHIEUNHAPKHO">
                 <ScalarProperty Name="MaPNK" ColumnName="MaPNK" />
                 <ScalarProperty Name="NgayNhapKho" ColumnName="NgayNhapKho" />
@@ -893,7 +896,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PHIEUSUACHUAs">
-            <EntityTypeMapping TypeName="BrothersGarageModel.PHIEUSUACHUA">
+            <EntityTypeMapping TypeName="BROTHERSGARAGE.MDFModel.PHIEUSUACHUA">
               <MappingFragment StoreEntitySet="PHIEUSUACHUA">
                 <ScalarProperty Name="MaPSC" ColumnName="MaPSC" />
                 <ScalarProperty Name="MaTiepNhan" ColumnName="MaTiepNhan" />
@@ -903,7 +906,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PHIEUTHUTIENs">
-            <EntityTypeMapping TypeName="BrothersGarageModel.PHIEUTHUTIEN">
+            <EntityTypeMapping TypeName="BROTHERSGARAGE.MDFModel.PHIEUTHUTIEN">
               <MappingFragment StoreEntitySet="PHIEUTHUTIEN">
                 <ScalarProperty Name="MaPTT" ColumnName="MaPTT" />
                 <ScalarProperty Name="MaPSC" ColumnName="MaPSC" />
@@ -913,7 +916,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="THAMSOes">
-            <EntityTypeMapping TypeName="BrothersGarageModel.THAMSO">
+            <EntityTypeMapping TypeName="BROTHERSGARAGE.MDFModel.THAMSO">
               <MappingFragment StoreEntitySet="THAMSO">
                 <ScalarProperty Name="TenThamSo" ColumnName="TenThamSo" />
                 <ScalarProperty Name="GiaTri" ColumnName="GiaTri" />
@@ -921,7 +924,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="THANGNAMs">
-            <EntityTypeMapping TypeName="BrothersGarageModel.THANGNAM">
+            <EntityTypeMapping TypeName="BROTHERSGARAGE.MDFModel.THANGNAM">
               <MappingFragment StoreEntitySet="THANGNAM">
                 <ScalarProperty Name="MaTN" ColumnName="MaTN" />
                 <ScalarProperty Name="Thang" ColumnName="Thang" />
@@ -930,7 +933,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TIENCONGs">
-            <EntityTypeMapping TypeName="BrothersGarageModel.TIENCONG">
+            <EntityTypeMapping TypeName="BROTHERSGARAGE.MDFModel.TIENCONG">
               <MappingFragment StoreEntitySet="TIENCONG">
                 <ScalarProperty Name="MaTienCong" ColumnName="MaTienCong" />
                 <ScalarProperty Name="TenTienCong" ColumnName="TenTienCong" />
@@ -939,7 +942,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TIEPNHANs">
-            <EntityTypeMapping TypeName="BrothersGarageModel.TIEPNHAN">
+            <EntityTypeMapping TypeName="BROTHERSGARAGE.MDFModel.TIEPNHAN">
               <MappingFragment StoreEntitySet="TIEPNHAN">
                 <ScalarProperty Name="MaTiepNhan" ColumnName="MaTiepNhan" />
                 <ScalarProperty Name="BienSo" ColumnName="BienSo" />
@@ -954,7 +957,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="VATTUs">
-            <EntityTypeMapping TypeName="BrothersGarageModel.VATTU">
+            <EntityTypeMapping TypeName="BROTHERSGARAGE.MDFModel.VATTU">
               <MappingFragment StoreEntitySet="VATTU">
                 <ScalarProperty Name="MaVatTu" ColumnName="MaVatTu" />
                 <ScalarProperty Name="TenVatTu" ColumnName="TenVatTu" />

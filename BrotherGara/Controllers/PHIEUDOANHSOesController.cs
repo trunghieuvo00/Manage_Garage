@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using BrotherGara.Models;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using BrotherGara.Models;
 
 namespace BrotherGara.Controllers
 {
@@ -29,7 +26,8 @@ namespace BrotherGara.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             PHIEUDOANHSO pHIEUDOANHSO = db.PHIEUDOANHSOes.Find(id);
-            if (pHIEUDOANHSO == null)
+            var thangnam = db.THANGNAMs.Find(pHIEUDOANHSO.MaTN);
+            if (pHIEUDOANHSO == null || thangnam == null)
             {
                 return HttpNotFound();
             }
@@ -50,6 +48,19 @@ namespace BrotherGara.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "MaPDS,MaTN,TongDoanhThu")] PHIEUDOANHSO pHIEUDOANHSO)
         {
+            int idMax = int.Parse(db.PHIEUDOANHSOes.OrderByDescending(p => p.MaPDS).FirstOrDefault()?.MaPDS.Substring(3) ?? "0");
+            pHIEUDOANHSO.MaPDS = "PDS" + (idMax + 1).ToString("D5");
+
+            var thangNam = db.THANGNAMs.Find(pHIEUDOANHSO.MaTN);
+            var sotienthus = from ptt in db.PHIEUTHUTIENs
+                             where ptt.NgayThuTien.Month == thangNam.Thang && ptt.NgayThuTien.Year == thangNam.Nam
+                             select new { ptt.SoTienThu };
+
+            if (sotienthus.Count() == 0 )
+                pHIEUDOANHSO.TongDoanhThu = 0;
+            else
+                pHIEUDOANHSO.TongDoanhThu = sotienthus?.Sum(x => x.SoTienThu);
+
             if (ModelState.IsValid)
             {
                 db.PHIEUDOANHSOes.Add(pHIEUDOANHSO);

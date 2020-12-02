@@ -15,10 +15,11 @@ namespace BrotherGara.Controllers
         private BrothersGarageEntities db = new BrothersGarageEntities();
 
         // GET: NOIDUNGDOANHSOes
-        public ActionResult Index()
+        public ActionResult Index(string id)
         {
             var nOIDUNGDOANHSOes = db.NOIDUNGDOANHSOes.Include(n => n.HIEUXE).Include(n => n.PHIEUDOANHSO);
-            return View(nOIDUNGDOANHSOes.ToList());
+            var result = nOIDUNGDOANHSOes.ToList().Where(x => x.MaPDS == id);
+            return View(result);
         }
 
         // GET: NOIDUNGDOANHSOes/Details/5
@@ -42,6 +43,7 @@ namespace BrotherGara.Controllers
             ViewBag.MaHieuXe = new SelectList(db.HIEUXEs, "MaHieuXe", "TenHieuXe");
             ViewBag.MaPDS = new SelectList(db.PHIEUDOANHSOes, "MaPDS", "MaTN");
             ViewBag.MaPTT = new SelectList(db.PHIEUTHUTIENs, "MaPTT", "MaPSC");
+
             return View();
         }
 
@@ -52,11 +54,29 @@ namespace BrotherGara.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "MaNDDS,MaPDS,MaPTT,MaHieuXe,SoLuotSua,ThanhTien,TiLe")] NOIDUNGDOANHSO nOIDUNGDOANHSO)
         {
+
+            int idMax = int.Parse(db.NOIDUNGDOANHSOes.OrderByDescending(p => p.MaNDDS).FirstOrDefault()?.MaNDDS.Substring(4) ?? "0");
+            nOIDUNGDOANHSO.MaNDDS = "NDDS" + (idMax + 1).ToString("D4");
+
+            var data = from tiepnhan in db.TIEPNHANs
+                       join phieusuachua in db.PHIEUSUACHUAs on tiepnhan.MaTiepNhan equals phieusuachua.MaTiepNhan
+                       where tiepnhan.MaHieuXe == nOIDUNGDOANHSO.MaHieuXe
+                       select new { tongTien = phieusuachua.TongTien };
+
+            var tongdoanhthu = db.PHIEUDOANHSOes.Find(nOIDUNGDOANHSO.MaPDS).TongDoanhThu;
+
+            if(data.Count() > 0)
+            {
+                nOIDUNGDOANHSO.SoLuotSua = data.Count();
+                nOIDUNGDOANHSO.ThanhTien = data.Sum(x => x.tongTien);
+                nOIDUNGDOANHSO.TiLe = (double)(data.Sum(x => x.tongTien) / tongdoanhthu);
+            }
+            
             if (ModelState.IsValid)
             {
                 db.NOIDUNGDOANHSOes.Add(nOIDUNGDOANHSO);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { id = nOIDUNGDOANHSO.MaPDS});
             }
 
             ViewBag.MaHieuXe = new SelectList(db.HIEUXEs, "MaHieuXe", "TenHieuXe", nOIDUNGDOANHSO.MaHieuXe);
@@ -114,7 +134,7 @@ namespace BrotherGara.Controllers
             {
                 return HttpNotFound();
             }
-            return View(nOIDUNGDOANHSO);
+            return Redirect("/PHIEUDOANHSOes");
         }
 
         // POST: NOIDUNGDOANHSOes/Delete/5
