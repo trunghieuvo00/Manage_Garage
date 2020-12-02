@@ -1,76 +1,78 @@
 ﻿@model IEnumerable<BrotherGara.Models.TIEPNHAN>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Phiếu tiếp nhận";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<div id="content">
+    <div class="container-fluid">
+        <h2>Phiếu tiếp nhận</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.BienSo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TenChuXe)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DiaChi)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DienThoai)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NgayTiepNhan)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TienNo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HIEUXE.TenHieuXe)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.BienSo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TenChuXe)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DiaChi)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DienThoai)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NgayTiepNhan)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TienNo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HIEUXE.TenHieuXe)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaTiepNhan }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaTiepNhan }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaTiepNhan })
-        </td>
-    </tr>
-}
-
-</table>
+        <p>
+            @Html.ActionLink("Thêm Phiếu tiếp nhận", "Create", null, new { @class = "btn btn-success" })
+        </p>
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Danh sách Phiếu tiếp nhận</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Mã phiếu tiếp nhận
+                                </th>
+                                <th>
+                                    Biển số
+                                </th>
+                                <th>
+                                    Tên chủ xe
+                                </th>
+                                <th>
+                                    Tên hiệu xe
+                                </th>
+                                <th>
+                                    Ngày tiếp nhận
+                                </th>
+                                <th>
+                                    Tiền nợ
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MaTiepNhan)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.BienSo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TenChuXe)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.HIEUXE.TenHieuXe)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NgayTiepNhan)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TienNo)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Chi tiết", "Details", new { id = item.MaTiepNhan }, new { @class = "btn btn-info" })
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

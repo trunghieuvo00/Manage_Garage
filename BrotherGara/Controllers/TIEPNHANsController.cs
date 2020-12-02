@@ -36,11 +36,36 @@ namespace BrotherGara.Controllers
             return View(tIEPNHAN);
         }
 
+        private string CreateIdAuto()
+        {
+            int id_num = 1;
+            if (db.TIEPNHANs.Count() != 0)
+            {
+                var phieu_last = db.TIEPNHANs.OrderByDescending(p => p.MaTiepNhan).FirstOrDefault();
+                id_num = Int32.Parse((phieu_last.MaTiepNhan).Substring(2)) + 1;
+            }
+            string id = id_num.ToString();
+            while (id.Length < 6)
+                id = "0" + id;
+            return "TN" + id;
+        }
+
         // GET: TIEPNHANs/Create
         public ActionResult Create()
         {
+            ViewBag.loi = false;
+            int countTIEPNHANs = db.TIEPNHANs.ToList().Count();
+            int tiepNhanToiDa = db.THAMSOes.ToList().ElementAt(3).GiaTri;
+            if (countTIEPNHANs >= tiepNhanToiDa)
+                ViewBag.loi = true;
+
             ViewBag.MaHieuXe = new SelectList(db.HIEUXEs, "MaHieuXe", "TenHieuXe");
-            return View();
+
+            TIEPNHAN model = new TIEPNHAN();
+            model.MaTiepNhan = CreateIdAuto();
+            model.NgayTiepNhan = DateTime.Now;
+
+            return View(model);
         }
 
         // POST: TIEPNHANs/Create
@@ -48,10 +73,11 @@ namespace BrotherGara.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaTiepNhan,BienSo,TenChuXe,MaHieuXe,DiaChi,DienThoai,NgayTiepNhan,TienNo,Email")] TIEPNHAN tIEPNHAN)
+        public ActionResult Create([Bind(Include = "MaTiepNhan,BienSo,TenChuXe,MaHieuXe,DiaChi,DienThoai,NgayTiepNhan,Email")] TIEPNHAN tIEPNHAN)
         {
             if (ModelState.IsValid)
             {
+                tIEPNHAN.TienNo = 0;
                 db.TIEPNHANs.Add(tIEPNHAN);
                 db.SaveChanges();
                 return RedirectToAction("Index");
