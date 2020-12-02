@@ -2201,6 +2201,9 @@
     <Content Include="Views\PHIEUSUACHUAs\Details.cshtml" />
     <Content Include="Views\PHIEUSUACHUAs\Edit.cshtml" />
     <Content Include="Views\PHIEUSUACHUAs\Index.cshtml" />
+    <Content Include="Views\PHIEUSUACHUAs\CreateWithID.cshtml" />
+    <Content Include="Views\CT_VATTU\CreateWithId.cshtml" />
+    <Content Include="Views\CT_TIENCONG\CreateWithId.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

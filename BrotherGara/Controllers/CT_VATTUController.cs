@@ -15,10 +15,9 @@ namespace BrotherGara.Controllers
         private BrothersGarageEntities db = new BrothersGarageEntities();
 
         // GET: CT_VATTU
-        public ActionResult Index(string id)
+        public ActionResult Index()
         {
-            var cT_VATTU = db.CT_VATTU.Include(c => c.PHIEUSUACHUA).Include(c => c.VATTU).Where(c => c.MaPSC == id);
-            ViewBag.MaPSC = id;
+            var cT_VATTU = db.CT_VATTU;
             return View(cT_VATTU.ToList());
         }
 
@@ -46,10 +45,32 @@ namespace BrotherGara.Controllers
             model.MaPSC = id;
             return View(model);
         }
+        public ActionResult CreateWithId(string id)
+        {
+            ViewBag.MaPSC = new SelectList(db.PHIEUSUACHUAs.Where(t => t.MaPSC == id), "MaPSC", "MaPSC", db.PHIEUSUACHUAs.Where(t => t.MaPSC == id));
+            ViewBag.MaVatTu = new SelectList(db.VATTUs, "MaVatTu", "TenVatTu");
+            return View();
+        }
 
         // POST: CT_VATTU/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateWithId([Bind(Include = "MaCTVT,MaPSC,MaVatTu,DonGia,SoLuong,ThanhTien")] CT_VATTU cT_VATTU)
+        {
+            if (ModelState.IsValid)
+            {
+                db.CT_VATTU.Add(cT_VATTU);
+
+                db.SaveChanges();
+                return RedirectToAction("Index", new { @id = cT_VATTU.MaPSC });
+            }
+
+            ViewBag.MaPSC = new SelectList(db.PHIEUSUACHUAs, "MaPSC", "MaTiepNhan", cT_VATTU.MaPSC);
+            ViewBag.MaVatTu = new SelectList(db.VATTUs, "MaVatTu", "TenVatTu", cT_VATTU.MaVatTu);
+            return View(cT_VATTU);
+        }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "MaCTVT,MaPSC,MaVatTu,DonGia,SoLuong,ThanhTien")] CT_VATTU cT_VATTU)
@@ -68,6 +89,8 @@ namespace BrotherGara.Controllers
         }
 
         // GET: CT_VATTU/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(string id)
         {
             if (id == null)

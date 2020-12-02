@@ -1,0 +1,62 @@
+﻿@model BrotherGara.Models.PHIEUSUACHUA
+
+@{
+    ViewBag.Title = "Thêm phiếu sửa chữa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container-fluid">
+    <h1 class="text-center font-weight-bold" style="color: black">Thêm phiếu sửa chữa</h1>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal" style="width: 500px; display: block; margin:auto">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <div class="control-label col-md-12">Mã phiếu sửa chữa</div>
+                <div class="col-md-12">
+                    @Html.EditorFor(model => model.MaPSC, new { htmlAttributes = new { @class = "form-control", @minlength = "8", @maxlength = "8" } })
+                    @Html.ValidationMessageFor(model => model.MaPSC, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="control-label col-md-12">Mã tiếp nhận</div>
+                <div class="col-md-12">
+                    @Html.DropDownList("MaTiepNhan", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.MaTiepNhan, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="control-label col-md-12">Ngày sửa chữa</div>
+                <div class="col-md-12">
+                    @Html.EditorFor(model => model.NgaySuaChua, new { htmlAttributes = new { @class = "form-control", @type = "datetime-local" } })
+                    @Html.ValidationMessageFor(model => model.NgaySuaChua, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="control-label col-md-12">Tổng tiền</div>
+                <div class="col-md-12">
+                    @Html.EditorFor(model => model.TongTien, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TongTien, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group col-md-12 d-flex justify-content-lg-center">
+                <div class="m-2">
+                    <input type="submit" value="Tạo" class="btn btn-success" style="width: 100px" />
+                </div>
+                <div class="m-2">
+                    @Html.ActionLink("Hủy", "Index", null, new { @class = "btn btn-danger", @style = "width: 100px" })
+                </div>
+            </div>
+        </div>
+    }
+</div>

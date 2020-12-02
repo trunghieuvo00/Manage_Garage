@@ -15,10 +15,9 @@ namespace BrotherGara.Controllers
         private BrothersGarageEntities db = new BrothersGarageEntities();
 
         // GET: CT_TIENCONG
-        public ActionResult Index(string id)
+        public ActionResult Index()
         {
-            var cT_TIENCONG = db.CT_TIENCONG.Include(c => c.PHIEUSUACHUA).Include(c => c.TIENCONG1).Where(c => c.MaPSC == id);
-            ViewBag.MaPSC = id;
+            var cT_TIENCONG = db.CT_TIENCONG;
             return View(cT_TIENCONG.ToList());
         }
 
@@ -53,6 +52,27 @@ namespace BrotherGara.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "MaCTTC,MaPSC,MaTienCong,TienCong")] CT_TIENCONG cT_TIENCONG)
+        {
+            if (ModelState.IsValid)
+            {
+                db.CT_TIENCONG.Add(cT_TIENCONG);
+                db.SaveChanges();
+                return RedirectToAction("Index", new { @id = cT_TIENCONG.MaPSC });
+            }
+
+            ViewBag.MaPSC = new SelectList(db.PHIEUSUACHUAs, "MaPSC", "MaTiepNhan", cT_TIENCONG.MaPSC);
+            ViewBag.MaTienCong = new SelectList(db.TIENCONGs, "MaTienCong", "TenTienCong", cT_TIENCONG.MaTienCong);
+            return View(cT_TIENCONG);
+        }
+        public ActionResult CreateWithId(string id)
+        {
+            ViewBag.MaPSC = new SelectList(db.PHIEUSUACHUAs.Where(t => t.MaPSC == id), "MaPSC", "MaPSC", db.PHIEUSUACHUAs.Where(t => t.MaPSC == id));
+            ViewBag.MaTienCong = new SelectList(db.TIENCONGs, "MaTienCong", "TenTienCong");
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateWithId([Bind(Include = "MaCTTC,MaPSC,MaTienCong,TienCong")] CT_TIENCONG cT_TIENCONG)
         {
             if (ModelState.IsValid)
             {
