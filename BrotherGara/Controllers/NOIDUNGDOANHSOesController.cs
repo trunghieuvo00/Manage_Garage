@@ -134,7 +134,7 @@ namespace BrotherGara.Controllers
             {
                 return HttpNotFound();
             }
-            return Redirect("/PHIEUDOANHSOes");
+            return View(nOIDUNGDOANHSO);
         }
 
         // POST: NOIDUNGDOANHSOes/Delete/5
@@ -143,9 +143,10 @@ namespace BrotherGara.Controllers
         public ActionResult DeleteConfirmed(string id)
         {
             NOIDUNGDOANHSO nOIDUNGDOANHSO = db.NOIDUNGDOANHSOes.Find(id);
+            var MaPDS = nOIDUNGDOANHSO.MaPDS;
             db.NOIDUNGDOANHSOes.Remove(nOIDUNGDOANHSO);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { id = MaPDS } );
         }
 
         protected override void Dispose(bool disposing)
