@@ -5,60 +5,83 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Thêm chi tiết nhập kho", "Create", new { @id = ViewBag.MaPNK }, new { @class = "btn btn-success" })
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.DonGia)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SoLuong)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ThanhTien)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PHIEUNHAPKHO.MaPNK)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.VATTU.TenVatTu)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.THANGNAM.MaTN)
-        </th>
-        <th></th>
-    </tr>
+<button class="btn btn-success ml-4 mb-3 brighter" style="width: 200px; color:azure; background-color: #61a0ed">
+    <i class="fas fa-plus" style="color: azure">
+        @Html.ActionLink("Thêm phiếu chi tiết nhập kho", "Create", new { @id = ViewBag.MaPNK }, new { @style = "color: #ffffff; font-family: Nunito;" })
+    </i>
+</button>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.DonGia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SoLuong)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ThanhTien)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PHIEUNHAPKHO.MaPNK)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.VATTU.TenVatTu)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.THANGNAM.MaTN)
-        </td>
-        <td>
-            @Html.ActionLink("Sửa", "Edit", new { id=item.MaNDNK }) |
-            @Html.ActionLink("Chi tiết", "Details", new { id=item.MaNDNK }) |
-            @Html.ActionLink("Xóa", "Delete", new { id=item.MaNDNK })
-        </td>
-    </tr>
-}
+<div id="content">
+    <div class="container-fluid">
 
-</table>
+
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h3 class="m-0 font-weight-bold text-primary">Danh sách nội dung nhập kho</h3>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Đơn giá
+                                </th>
+                                <th>
+                                    Số lượng
+                                </th>
+                                <th>
+                                    Thành tiền
+                                </th>
+                                <th>
+                                    Mã phiếu nhập kho
+                                </th>
+                                <th>
+                                    Tên vật tư
+                                </th>
+                                <th>
+                                    Mã tháng năm
+                                </th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DonGia)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.SoLuong)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ThanhTien)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PHIEUNHAPKHO.MaPNK)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.VATTU.TenVatTu)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.THANGNAM.MaTN)
+                                    </td>
+                                    @*<td>
+                                        @Html.ActionLink("Sửa", "Edit", new { id = item.MaNDNK }, new { @class = "btn btn-success" }) |
+                                        @Html.ActionLink("Chi tiết", "Details", new { id = item.MaNDNK }, new { @class = "btn btn-info" }) |
+                                        @Html.ActionLink("Xóa", "Delete", new { id = item.MaNDNK }, new { @class = "btn btn-danger" })
+                                    </td>*@
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

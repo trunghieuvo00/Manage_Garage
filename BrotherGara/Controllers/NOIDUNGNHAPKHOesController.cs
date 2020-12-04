@@ -64,6 +64,14 @@ namespace BrotherGara.Controllers
             ViewBag.MaPNK = id;
             return View(model);
         }
+        public ActionResult CreateWithID(string id)
+        {
+            ViewBag.MaPNK = new SelectList(db.PHIEUNHAPKHOes.Where(t => t.MaPNK == id), "MaPNK", "MaPNK", db.PHIEUNHAPKHOes.Where(t => t.MaPNK == id));
+
+            NOIDUNGNHAPKHO model = new NOIDUNGNHAPKHO();
+            model.MaNDNK = CreateIdAuto();
+            return View(model);
+        }
 
         // POST: NOIDUNGNHAPKHOes/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
@@ -84,6 +92,22 @@ namespace BrotherGara.Controllers
             ViewBag.MaPNK = new SelectList(db.PHIEUNHAPKHOes, "MaPNK", "MaPNK", nOIDUNGNHAPKHO.MaPNK);
             ViewBag.MaVatTu = new SelectList(db.VATTUs, "MaVatTu", "TenVatTu", nOIDUNGNHAPKHO.MaVatTu);
             ViewBag.MaTN = new SelectList(db.THANGNAMs, "MaTN", "MaTN", nOIDUNGNHAPKHO.MaTN);
+            return View(nOIDUNGNHAPKHO);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateWithID([Bind(Include = "MaNDNK,MaPNK,MaTN,MaVatTu,DonGia,SoLuong")] NOIDUNGNHAPKHO nOIDUNGNHAPKHO)
+        {
+            if (ModelState.IsValid)
+            {
+                nOIDUNGNHAPKHO.ThanhTien = 0;
+                db.NOIDUNGNHAPKHOes.Add(nOIDUNGNHAPKHO);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.MaPNK = new SelectList(db.PHIEUNHAPKHOes, "MaPNK", nOIDUNGNHAPKHO.MaPNK);
             return View(nOIDUNGNHAPKHO);
         }
 

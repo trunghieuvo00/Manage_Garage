@@ -5,38 +5,54 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.NgayNhapKho)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TongChi)
-        </th>
-        <th></th>
-    </tr>
+<button class="btn btn-success ml-4 mb-3 brighter" style="width: 200px; color:azure; background-color: #61a0ed">
+    <i class="fas fa-plus" style="color: azure">
+        @Html.ActionLink("Thêm phiếu nhập kho", "Create", null, new { @style = "color: #ffffff; font-family: Nunito;" })
+    </i>
+</button>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NgayNhapKho)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TongChi)
-        </td>
-        <td>
-            @Html.ActionLink("Sửa", "Edit", new { id = item.MaPNK }) |
-            @Html.ActionLink("Chi tiết", "Details", new { id = item.MaPNK }) |
-            @Html.ActionLink("Xóa", "Delete", new { id = item.MaPNK })
-            @*@Html.ActionLink("Chi tiết vật tư", "Index", "NOIDUNGNHAPKHOes", new { id = item.MaPSC }, new { @class = "btn btn-success" })
-            @Html.ActionLink("Chi tiết tiền công", "Index", "CT_TIENCONG", new { id = item.MaPSC }, new { @class = "btn btn-info" })*@
-        </td>
-    </tr>
-}
+<div id="content">
+    <div class="container-fluid">
 
-</table>
+
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h3 class="m-0 font-weight-bold text-primary">Danh sách phiếu nhập kho</h3>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Mã phiếu nhập kho</th>
+                                <th>
+                                    Tổng chi
+                                </th>
+                                <th style="width: auto"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.MaPNK)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TongChi)
+                                    </td>
+                                    <td>
+                                        @*@Html.ActionLink("Sửa", "Edit", new { id = item.MaPNK }, new { @class = "btn btn-success" })*@
+                                        @Html.ActionLink("Chi tiết", "Details", new { id = item.MaPNK }, new { @class = "btn btn-info" })
+                                        @*@Html.ActionLink("Xóa", "Delete", new { id = item.MaPNK }, new { @class = "btn btn-danger" })*@
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
