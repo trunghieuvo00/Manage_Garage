@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="cdfbafd9f848458bac1faf8f2ad84d4d" Name="Diagram1">
+      <Diagram DiagramId="9980617d5755425a86dd821c710d1807" Name="Diagram1">
         <EntityTypeShape EntityType="BrothersGarageModel.BAOCAOTON" Width="1.5" PointX="10.5" PointY="5.875" IsExpanded="true" />
         <EntityTypeShape EntityType="BrothersGarageModel.CT_TIENCONG" Width="1.5" PointX="7.5" PointY="10" IsExpanded="true" />
         <EntityTypeShape EntityType="BrothersGarageModel.CT_VATTU" Width="1.5" PointX="10.5" PointY="9.75" IsExpanded="true" />
@@ -20,20 +20,20 @@
         <EntityTypeShape EntityType="BrothersGarageModel.TIENCONG" Width="1.5" PointX="5.25" PointY="7.125" IsExpanded="true" />
         <EntityTypeShape EntityType="BrothersGarageModel.TIEPNHAN" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
         <EntityTypeShape EntityType="BrothersGarageModel.VATTU" Width="1.5" PointX="8.25" PointY="5.875" IsExpanded="true" />
-        <AssociationConnector Association="BrothersGarageModel.FK__BAOCAOTON__MaVat__7C4F7684" ManuallyRouted="false" />
-        <AssociationConnector Association="BrothersGarageModel.FK__CT_TIENCO__MaPSC__6A30C649" ManuallyRouted="false" />
-        <AssociationConnector Association="BrothersGarageModel.FK__CT_TIENCO__MaTie__6B24EA82" ManuallyRouted="false" />
-        <AssociationConnector Association="BrothersGarageModel.FK__CT_VATTU__MaPSC__6383C8BA" ManuallyRouted="false" />
-        <AssociationConnector Association="BrothersGarageModel.FK__CT_VATTU__MaVatT__628FA481" ManuallyRouted="false" />
-        <AssociationConnector Association="BrothersGarageModel.FK__NOIDUNGDO__MaHie__06CD04F7" ManuallyRouted="false" />
-        <AssociationConnector Association="BrothersGarageModel.FK__TIEPNHAN__MaHieu__4CA06362" ManuallyRouted="false" />
-        <AssociationConnector Association="BrothersGarageModel.FK__NOIDUNGDO__MaPDS__05D8E0BE" ManuallyRouted="false" />
-        <AssociationConnector Association="BrothersGarageModel.FK__NOIDUNGNH__MaPNK__73BA3083" ManuallyRouted="false" />
-        <AssociationConnector Association="BrothersGarageModel.FK__NOIDUNGNH__MaVat__74AE54BC" ManuallyRouted="false" />
-        <AssociationConnector Association="BrothersGarageModel.FK__NOIDUNGNHA__MaTN__75A278F5" ManuallyRouted="false" />
-        <AssociationConnector Association="BrothersGarageModel.FK__PHIEUDOANH__MaTN__59063A47" ManuallyRouted="false" />
-        <AssociationConnector Association="BrothersGarageModel.FK__PHIEUSUAC__MaTie__5CD6CB2B" ManuallyRouted="false" />
-        <AssociationConnector Association="BrothersGarageModel.FK__PHIEUTHUT__MaPSC__00200768" ManuallyRouted="false" />
+        <AssociationConnector Association="BrothersGarageModel.FK__BAOCAOTON__MaVat__3B0BC30C" ManuallyRouted="false" />
+        <AssociationConnector Association="BrothersGarageModel.FK__CT_TIENCO__MaPSC__28ED12D1" ManuallyRouted="false" />
+        <AssociationConnector Association="BrothersGarageModel.FK__CT_TIENCO__MaTie__29E1370A" ManuallyRouted="false" />
+        <AssociationConnector Association="BrothersGarageModel.FK__CT_VATTU__MaPSC__22401542" ManuallyRouted="false" />
+        <AssociationConnector Association="BrothersGarageModel.FK__CT_VATTU__MaVatT__214BF109" ManuallyRouted="false" />
+        <AssociationConnector Association="BrothersGarageModel.FK__NOIDUNGDO__MaHie__4589517F" ManuallyRouted="false" />
+        <AssociationConnector Association="BrothersGarageModel.FK__TIEPNHAN__MaHieu__0B5CAFEA" ManuallyRouted="false" />
+        <AssociationConnector Association="BrothersGarageModel.FK__NOIDUNGDO__MaPDS__44952D46" ManuallyRouted="false" />
+        <AssociationConnector Association="BrothersGarageModel.FK__NOIDUNGNH__MaPNK__32767D0B" ManuallyRouted="false" />
+        <AssociationConnector Association="BrothersGarageModel.FK__NOIDUNGNH__MaVat__336AA144" ManuallyRouted="false" />
+        <AssociationConnector Association="BrothersGarageModel.FK__NOIDUNGNHA__MaTN__345EC57D" ManuallyRouted="false" />
+        <AssociationConnector Association="BrothersGarageModel.FK__PHIEUDOANH__MaTN__17C286CF" ManuallyRouted="false" />
+        <AssociationConnector Association="BrothersGarageModel.FK__PHIEUSUAC__MaTie__1B9317B3" ManuallyRouted="false" />
+        <AssociationConnector Association="BrothersGarageModel.FK__PHIEUTHUT__MaPSC__3EDC53F0" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

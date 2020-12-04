@@ -147,7 +147,7 @@
           <Property Name="SoLuong" Type="int" />
           <Property Name="DonGia" Type="money" />
         </EntityType>
-        <Association Name="FK__BAOCAOTON__MaVat__7C4F7684">
+        <Association Name="FK__BAOCAOTON__MaVat__3B0BC30C">
           <End Role="VATTU" Type="Self.VATTU" Multiplicity="1" />
           <End Role="BAOCAOTON" Type="Self.BAOCAOTON" Multiplicity="*" />
           <ReferentialConstraint>
@@ -159,7 +159,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CT_TIENCO__MaPSC__6A30C649">
+        <Association Name="FK__CT_TIENCO__MaPSC__28ED12D1">
           <End Role="PHIEUSUACHUA" Type="Self.PHIEUSUACHUA" Multiplicity="1" />
           <End Role="CT_TIENCONG" Type="Self.CT_TIENCONG" Multiplicity="*" />
           <ReferentialConstraint>
@@ -171,7 +171,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CT_TIENCO__MaTie__6B24EA82">
+        <Association Name="FK__CT_TIENCO__MaTie__29E1370A">
           <End Role="TIENCONG" Type="Self.TIENCONG" Multiplicity="1" />
           <End Role="CT_TIENCONG" Type="Self.CT_TIENCONG" Multiplicity="*" />
           <ReferentialConstraint>
@@ -183,7 +183,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CT_VATTU__MaPSC__6383C8BA">
+        <Association Name="FK__CT_VATTU__MaPSC__22401542">
           <End Role="PHIEUSUACHUA" Type="Self.PHIEUSUACHUA" Multiplicity="1" />
           <End Role="CT_VATTU" Type="Self.CT_VATTU" Multiplicity="*" />
           <ReferentialConstraint>
@@ -195,7 +195,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CT_VATTU__MaVatT__628FA481">
+        <Association Name="FK__CT_VATTU__MaVatT__214BF109">
           <End Role="VATTU" Type="Self.VATTU" Multiplicity="1" />
           <End Role="CT_VATTU" Type="Self.CT_VATTU" Multiplicity="*" />
           <ReferentialConstraint>
@@ -207,7 +207,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__NOIDUNGDO__MaHie__06CD04F7">
+        <Association Name="FK__NOIDUNGDO__MaHie__4589517F">
           <End Role="HIEUXE" Type="Self.HIEUXE" Multiplicity="1" />
           <End Role="NOIDUNGDOANHSO" Type="Self.NOIDUNGDOANHSO" Multiplicity="*" />
           <ReferentialConstraint>
@@ -219,7 +219,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__NOIDUNGDO__MaPDS__05D8E0BE">
+        <Association Name="FK__NOIDUNGDO__MaPDS__44952D46">
           <End Role="PHIEUDOANHSO" Type="Self.PHIEUDOANHSO" Multiplicity="1" />
           <End Role="NOIDUNGDOANHSO" Type="Self.NOIDUNGDOANHSO" Multiplicity="*" />
           <ReferentialConstraint>
@@ -231,7 +231,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__NOIDUNGNH__MaPNK__73BA3083">
+        <Association Name="FK__NOIDUNGNH__MaPNK__32767D0B">
           <End Role="PHIEUNHAPKHO" Type="Self.PHIEUNHAPKHO" Multiplicity="1" />
           <End Role="NOIDUNGNHAPKHO" Type="Self.NOIDUNGNHAPKHO" Multiplicity="*" />
           <ReferentialConstraint>
@@ -243,7 +243,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__NOIDUNGNH__MaVat__74AE54BC">
+        <Association Name="FK__NOIDUNGNH__MaVat__336AA144">
           <End Role="VATTU" Type="Self.VATTU" Multiplicity="1" />
           <End Role="NOIDUNGNHAPKHO" Type="Self.NOIDUNGNHAPKHO" Multiplicity="*" />
           <ReferentialConstraint>
@@ -255,7 +255,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__NOIDUNGNHA__MaTN__75A278F5">
+        <Association Name="FK__NOIDUNGNHA__MaTN__345EC57D">
           <End Role="THANGNAM" Type="Self.THANGNAM" Multiplicity="1" />
           <End Role="NOIDUNGNHAPKHO" Type="Self.NOIDUNGNHAPKHO" Multiplicity="*" />
           <ReferentialConstraint>
@@ -267,7 +267,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PHIEUDOANH__MaTN__59063A47">
+        <Association Name="FK__PHIEUDOANH__MaTN__17C286CF">
           <End Role="THANGNAM" Type="Self.THANGNAM" Multiplicity="1" />
           <End Role="PHIEUDOANHSO" Type="Self.PHIEUDOANHSO" Multiplicity="*" />
           <ReferentialConstraint>
@@ -279,7 +279,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PHIEUSUAC__MaTie__5CD6CB2B">
+        <Association Name="FK__PHIEUSUAC__MaTie__1B9317B3">
           <End Role="TIEPNHAN" Type="Self.TIEPNHAN" Multiplicity="1" />
           <End Role="PHIEUSUACHUA" Type="Self.PHIEUSUACHUA" Multiplicity="*" />
           <ReferentialConstraint>
@@ -291,7 +291,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PHIEUTHUT__MaPSC__00200768">
+        <Association Name="FK__PHIEUTHUT__MaPSC__3EDC53F0">
           <End Role="PHIEUSUACHUA" Type="Self.PHIEUSUACHUA" Multiplicity="1" />
           <End Role="PHIEUTHUTIEN" Type="Self.PHIEUTHUTIEN" Multiplicity="*" />
           <ReferentialConstraint>
@@ -303,7 +303,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__TIEPNHAN__MaHieu__4CA06362">
+        <Association Name="FK__TIEPNHAN__MaHieu__0B5CAFEA">
           <End Role="HIEUXE" Type="Self.HIEUXE" Multiplicity="1" />
           <End Role="TIEPNHAN" Type="Self.TIEPNHAN" Multiplicity="*" />
           <ReferentialConstraint>
@@ -331,59 +331,59 @@
           <EntitySet Name="TIENCONG" EntityType="Self.TIENCONG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TIEPNHAN" EntityType="Self.TIEPNHAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VATTU" EntityType="Self.VATTU" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__BAOCAOTON__MaVat__7C4F7684" Association="Self.FK__BAOCAOTON__MaVat__7C4F7684">
+          <AssociationSet Name="FK__BAOCAOTON__MaVat__3B0BC30C" Association="Self.FK__BAOCAOTON__MaVat__3B0BC30C">
             <End Role="VATTU" EntitySet="VATTU" />
             <End Role="BAOCAOTON" EntitySet="BAOCAOTON" />
           </AssociationSet>
-          <AssociationSet Name="FK__CT_TIENCO__MaPSC__6A30C649" Association="Self.FK__CT_TIENCO__MaPSC__6A30C649">
+          <AssociationSet Name="FK__CT_TIENCO__MaPSC__28ED12D1" Association="Self.FK__CT_TIENCO__MaPSC__28ED12D1">
             <End Role="PHIEUSUACHUA" EntitySet="PHIEUSUACHUA" />
             <End Role="CT_TIENCONG" EntitySet="CT_TIENCONG" />
           </AssociationSet>
-          <AssociationSet Name="FK__CT_TIENCO__MaTie__6B24EA82" Association="Self.FK__CT_TIENCO__MaTie__6B24EA82">
+          <AssociationSet Name="FK__CT_TIENCO__MaTie__29E1370A" Association="Self.FK__CT_TIENCO__MaTie__29E1370A">
             <End Role="TIENCONG" EntitySet="TIENCONG" />
             <End Role="CT_TIENCONG" EntitySet="CT_TIENCONG" />
           </AssociationSet>
-          <AssociationSet Name="FK__CT_VATTU__MaPSC__6383C8BA" Association="Self.FK__CT_VATTU__MaPSC__6383C8BA">
+          <AssociationSet Name="FK__CT_VATTU__MaPSC__22401542" Association="Self.FK__CT_VATTU__MaPSC__22401542">
             <End Role="PHIEUSUACHUA" EntitySet="PHIEUSUACHUA" />
             <End Role="CT_VATTU" EntitySet="CT_VATTU" />
           </AssociationSet>
-          <AssociationSet Name="FK__CT_VATTU__MaVatT__628FA481" Association="Self.FK__CT_VATTU__MaVatT__628FA481">
+          <AssociationSet Name="FK__CT_VATTU__MaVatT__214BF109" Association="Self.FK__CT_VATTU__MaVatT__214BF109">
             <End Role="VATTU" EntitySet="VATTU" />
             <End Role="CT_VATTU" EntitySet="CT_VATTU" />
           </AssociationSet>
-          <AssociationSet Name="FK__NOIDUNGDO__MaHie__06CD04F7" Association="Self.FK__NOIDUNGDO__MaHie__06CD04F7">
+          <AssociationSet Name="FK__NOIDUNGDO__MaHie__4589517F" Association="Self.FK__NOIDUNGDO__MaHie__4589517F">
             <End Role="HIEUXE" EntitySet="HIEUXE" />
             <End Role="NOIDUNGDOANHSO" EntitySet="NOIDUNGDOANHSO" />
           </AssociationSet>
-          <AssociationSet Name="FK__NOIDUNGDO__MaPDS__05D8E0BE" Association="Self.FK__NOIDUNGDO__MaPDS__05D8E0BE">
+          <AssociationSet Name="FK__NOIDUNGDO__MaPDS__44952D46" Association="Self.FK__NOIDUNGDO__MaPDS__44952D46">
             <End Role="PHIEUDOANHSO" EntitySet="PHIEUDOANHSO" />
             <End Role="NOIDUNGDOANHSO" EntitySet="NOIDUNGDOANHSO" />
           </AssociationSet>
-          <AssociationSet Name="FK__NOIDUNGNH__MaPNK__73BA3083" Association="Self.FK__NOIDUNGNH__MaPNK__73BA3083">
+          <AssociationSet Name="FK__NOIDUNGNH__MaPNK__32767D0B" Association="Self.FK__NOIDUNGNH__MaPNK__32767D0B">
             <End Role="PHIEUNHAPKHO" EntitySet="PHIEUNHAPKHO" />
             <End Role="NOIDUNGNHAPKHO" EntitySet="NOIDUNGNHAPKHO" />
           </AssociationSet>
-          <AssociationSet Name="FK__NOIDUNGNH__MaVat__74AE54BC" Association="Self.FK__NOIDUNGNH__MaVat__74AE54BC">
+          <AssociationSet Name="FK__NOIDUNGNH__MaVat__336AA144" Association="Self.FK__NOIDUNGNH__MaVat__336AA144">
             <End Role="VATTU" EntitySet="VATTU" />
             <End Role="NOIDUNGNHAPKHO" EntitySet="NOIDUNGNHAPKHO" />
           </AssociationSet>
-          <AssociationSet Name="FK__NOIDUNGNHA__MaTN__75A278F5" Association="Self.FK__NOIDUNGNHA__MaTN__75A278F5">
+          <AssociationSet Name="FK__NOIDUNGNHA__MaTN__345EC57D" Association="Self.FK__NOIDUNGNHA__MaTN__345EC57D">
             <End Role="THANGNAM" EntitySet="THANGNAM" />
             <End Role="NOIDUNGNHAPKHO" EntitySet="NOIDUNGNHAPKHO" />
           </AssociationSet>
-          <AssociationSet Name="FK__PHIEUDOANH__MaTN__59063A47" Association="Self.FK__PHIEUDOANH__MaTN__59063A47">
+          <AssociationSet Name="FK__PHIEUDOANH__MaTN__17C286CF" Association="Self.FK__PHIEUDOANH__MaTN__17C286CF">
             <End Role="THANGNAM" EntitySet="THANGNAM" />
             <End Role="PHIEUDOANHSO" EntitySet="PHIEUDOANHSO" />
           </AssociationSet>
-          <AssociationSet Name="FK__PHIEUSUAC__MaTie__5CD6CB2B" Association="Self.FK__PHIEUSUAC__MaTie__5CD6CB2B">
+          <AssociationSet Name="FK__PHIEUSUAC__MaTie__1B9317B3" Association="Self.FK__PHIEUSUAC__MaTie__1B9317B3">
             <End Role="TIEPNHAN" EntitySet="TIEPNHAN" />
             <End Role="PHIEUSUACHUA" EntitySet="PHIEUSUACHUA" />
           </AssociationSet>
-          <AssociationSet Name="FK__PHIEUTHUT__MaPSC__00200768" Association="Self.FK__PHIEUTHUT__MaPSC__00200768">
+          <AssociationSet Name="FK__PHIEUTHUT__MaPSC__3EDC53F0" Association="Self.FK__PHIEUTHUT__MaPSC__3EDC53F0">
             <End Role="PHIEUSUACHUA" EntitySet="PHIEUSUACHUA" />
             <End Role="PHIEUTHUTIEN" EntitySet="PHIEUTHUTIEN" />
           </AssociationSet>
-          <AssociationSet Name="FK__TIEPNHAN__MaHieu__4CA06362" Association="Self.FK__TIEPNHAN__MaHieu__4CA06362">
+          <AssociationSet Name="FK__TIEPNHAN__MaHieu__0B5CAFEA" Association="Self.FK__TIEPNHAN__MaHieu__0B5CAFEA">
             <End Role="HIEUXE" EntitySet="HIEUXE" />
             <End Role="TIEPNHAN" EntitySet="TIEPNHAN" />
           </AssociationSet>
@@ -404,7 +404,7 @@
           <Property Name="PhatSinhNhap" Type="Int32" />
           <Property Name="PhatSinhXuat" Type="Int32" />
           <Property Name="TonCuoi" Type="Int32" />
-          <NavigationProperty Name="VATTU" Relationship="Self.FK__BAOCAOTON__MaVat__7C4F7684" FromRole="BAOCAOTON" ToRole="VATTU" />
+          <NavigationProperty Name="VATTU" Relationship="Self.FK__BAOCAOTON__MaVat__3B0BC30C" FromRole="BAOCAOTON" ToRole="VATTU" />
         </EntityType>
         <EntityType Name="CT_TIENCONG">
           <Key>
@@ -414,8 +414,8 @@
           <Property Name="MaPSC" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="MaTienCong" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="TienCong" Type="Decimal" Precision="19" Scale="4" />
-          <NavigationProperty Name="PHIEUSUACHUA" Relationship="Self.FK__CT_TIENCO__MaPSC__6A30C649" FromRole="CT_TIENCONG" ToRole="PHIEUSUACHUA" />
-          <NavigationProperty Name="TIENCONG1" Relationship="Self.FK__CT_TIENCO__MaTie__6B24EA82" FromRole="CT_TIENCONG" ToRole="TIENCONG" />
+          <NavigationProperty Name="PHIEUSUACHUA" Relationship="Self.FK__CT_TIENCO__MaPSC__28ED12D1" FromRole="CT_TIENCONG" ToRole="PHIEUSUACHUA" />
+          <NavigationProperty Name="TIENCONG1" Relationship="Self.FK__CT_TIENCO__MaTie__29E1370A" FromRole="CT_TIENCONG" ToRole="TIENCONG" />
         </EntityType>
         <EntityType Name="CT_VATTU">
           <Key>
@@ -427,8 +427,8 @@
           <Property Name="DonGia" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="SoLuong" Type="Int32" Nullable="false" />
           <Property Name="ThanhTien" Type="Decimal" Precision="19" Scale="4" />
-          <NavigationProperty Name="PHIEUSUACHUA" Relationship="Self.FK__CT_VATTU__MaPSC__6383C8BA" FromRole="CT_VATTU" ToRole="PHIEUSUACHUA" />
-          <NavigationProperty Name="VATTU" Relationship="Self.FK__CT_VATTU__MaVatT__628FA481" FromRole="CT_VATTU" ToRole="VATTU" />
+          <NavigationProperty Name="PHIEUSUACHUA" Relationship="Self.FK__CT_VATTU__MaPSC__22401542" FromRole="CT_VATTU" ToRole="PHIEUSUACHUA" />
+          <NavigationProperty Name="VATTU" Relationship="Self.FK__CT_VATTU__MaVatT__214BF109" FromRole="CT_VATTU" ToRole="VATTU" />
         </EntityType>
         <EntityType Name="HIEUXE">
           <Key>
@@ -436,8 +436,8 @@
           </Key>
           <Property Name="MaHieuXe" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="TenHieuXe" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="NOIDUNGDOANHSOes" Relationship="Self.FK__NOIDUNGDO__MaHie__06CD04F7" FromRole="HIEUXE" ToRole="NOIDUNGDOANHSO" />
-          <NavigationProperty Name="TIEPNHANs" Relationship="Self.FK__TIEPNHAN__MaHieu__4CA06362" FromRole="HIEUXE" ToRole="TIEPNHAN" />
+          <NavigationProperty Name="NOIDUNGDOANHSOes" Relationship="Self.FK__NOIDUNGDO__MaHie__4589517F" FromRole="HIEUXE" ToRole="NOIDUNGDOANHSO" />
+          <NavigationProperty Name="TIEPNHANs" Relationship="Self.FK__TIEPNHAN__MaHieu__0B5CAFEA" FromRole="HIEUXE" ToRole="TIEPNHAN" />
         </EntityType>
         <EntityType Name="NOIDUNGDOANHSO">
           <Key>
@@ -449,8 +449,8 @@
           <Property Name="SoLuotSua" Type="Int32" />
           <Property Name="ThanhTien" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="TiLe" Type="Double" />
-          <NavigationProperty Name="HIEUXE" Relationship="Self.FK__NOIDUNGDO__MaHie__06CD04F7" FromRole="NOIDUNGDOANHSO" ToRole="HIEUXE" />
-          <NavigationProperty Name="PHIEUDOANHSO" Relationship="Self.FK__NOIDUNGDO__MaPDS__05D8E0BE" FromRole="NOIDUNGDOANHSO" ToRole="PHIEUDOANHSO" />
+          <NavigationProperty Name="HIEUXE" Relationship="Self.FK__NOIDUNGDO__MaHie__4589517F" FromRole="NOIDUNGDOANHSO" ToRole="HIEUXE" />
+          <NavigationProperty Name="PHIEUDOANHSO" Relationship="Self.FK__NOIDUNGDO__MaPDS__44952D46" FromRole="NOIDUNGDOANHSO" ToRole="PHIEUDOANHSO" />
         </EntityType>
         <EntityType Name="NOIDUNGNHAPKHO">
           <Key>
@@ -463,9 +463,9 @@
           <Property Name="DonGia" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="SoLuong" Type="Int32" Nullable="false" />
           <Property Name="ThanhTien" Type="Decimal" Precision="19" Scale="4" />
-          <NavigationProperty Name="PHIEUNHAPKHO" Relationship="Self.FK__NOIDUNGNH__MaPNK__73BA3083" FromRole="NOIDUNGNHAPKHO" ToRole="PHIEUNHAPKHO" />
-          <NavigationProperty Name="VATTU" Relationship="Self.FK__NOIDUNGNH__MaVat__74AE54BC" FromRole="NOIDUNGNHAPKHO" ToRole="VATTU" />
-          <NavigationProperty Name="THANGNAM" Relationship="Self.FK__NOIDUNGNHA__MaTN__75A278F5" FromRole="NOIDUNGNHAPKHO" ToRole="THANGNAM" />
+          <NavigationProperty Name="PHIEUNHAPKHO" Relationship="Self.FK__NOIDUNGNH__MaPNK__32767D0B" FromRole="NOIDUNGNHAPKHO" ToRole="PHIEUNHAPKHO" />
+          <NavigationProperty Name="VATTU" Relationship="Self.FK__NOIDUNGNH__MaVat__336AA144" FromRole="NOIDUNGNHAPKHO" ToRole="VATTU" />
+          <NavigationProperty Name="THANGNAM" Relationship="Self.FK__NOIDUNGNHA__MaTN__345EC57D" FromRole="NOIDUNGNHAPKHO" ToRole="THANGNAM" />
         </EntityType>
         <EntityType Name="PHIEUDOANHSO">
           <Key>
@@ -474,8 +474,8 @@
           <Property Name="MaPDS" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="MaTN" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="TongDoanhThu" Type="Decimal" Precision="19" Scale="4" />
-          <NavigationProperty Name="NOIDUNGDOANHSOes" Relationship="Self.FK__NOIDUNGDO__MaPDS__05D8E0BE" FromRole="PHIEUDOANHSO" ToRole="NOIDUNGDOANHSO" />
-          <NavigationProperty Name="THANGNAM" Relationship="Self.FK__PHIEUDOANH__MaTN__59063A47" FromRole="PHIEUDOANHSO" ToRole="THANGNAM" />
+          <NavigationProperty Name="NOIDUNGDOANHSOes" Relationship="Self.FK__NOIDUNGDO__MaPDS__44952D46" FromRole="PHIEUDOANHSO" ToRole="NOIDUNGDOANHSO" />
+          <NavigationProperty Name="THANGNAM" Relationship="Self.FK__PHIEUDOANH__MaTN__17C286CF" FromRole="PHIEUDOANHSO" ToRole="THANGNAM" />
         </EntityType>
         <EntityType Name="PHIEUNHAPKHO">
           <Key>
@@ -484,7 +484,7 @@
           <Property Name="MaPNK" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="NgayNhapKho" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="TongChi" Type="Decimal" Precision="19" Scale="4" />
-          <NavigationProperty Name="NOIDUNGNHAPKHOes" Relationship="Self.FK__NOIDUNGNH__MaPNK__73BA3083" FromRole="PHIEUNHAPKHO" ToRole="NOIDUNGNHAPKHO" />
+          <NavigationProperty Name="NOIDUNGNHAPKHOes" Relationship="Self.FK__NOIDUNGNH__MaPNK__32767D0B" FromRole="PHIEUNHAPKHO" ToRole="NOIDUNGNHAPKHO" />
         </EntityType>
         <EntityType Name="PHIEUSUACHUA">
           <Key>
@@ -494,10 +494,10 @@
           <Property Name="MaTiepNhan" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="NgaySuaChua" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="TongTien" Type="Decimal" Precision="19" Scale="4" />
-          <NavigationProperty Name="CT_TIENCONG" Relationship="Self.FK__CT_TIENCO__MaPSC__6A30C649" FromRole="PHIEUSUACHUA" ToRole="CT_TIENCONG" />
-          <NavigationProperty Name="CT_VATTU" Relationship="Self.FK__CT_VATTU__MaPSC__6383C8BA" FromRole="PHIEUSUACHUA" ToRole="CT_VATTU" />
-          <NavigationProperty Name="TIEPNHAN" Relationship="Self.FK__PHIEUSUAC__MaTie__5CD6CB2B" FromRole="PHIEUSUACHUA" ToRole="TIEPNHAN" />
-          <NavigationProperty Name="PHIEUTHUTIENs" Relationship="Self.FK__PHIEUTHUT__MaPSC__00200768" FromRole="PHIEUSUACHUA" ToRole="PHIEUTHUTIEN" />
+          <NavigationProperty Name="CT_TIENCONG" Relationship="Self.FK__CT_TIENCO__MaPSC__28ED12D1" FromRole="PHIEUSUACHUA" ToRole="CT_TIENCONG" />
+          <NavigationProperty Name="CT_VATTU" Relationship="Self.FK__CT_VATTU__MaPSC__22401542" FromRole="PHIEUSUACHUA" ToRole="CT_VATTU" />
+          <NavigationProperty Name="TIEPNHAN" Relationship="Self.FK__PHIEUSUAC__MaTie__1B9317B3" FromRole="PHIEUSUACHUA" ToRole="TIEPNHAN" />
+          <NavigationProperty Name="PHIEUTHUTIENs" Relationship="Self.FK__PHIEUTHUT__MaPSC__3EDC53F0" FromRole="PHIEUSUACHUA" ToRole="PHIEUTHUTIEN" />
         </EntityType>
         <EntityType Name="PHIEUTHUTIEN">
           <Key>
@@ -507,7 +507,7 @@
           <Property Name="MaPSC" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="NgayThuTien" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="SoTienThu" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <NavigationProperty Name="PHIEUSUACHUA" Relationship="Self.FK__PHIEUTHUT__MaPSC__00200768" FromRole="PHIEUTHUTIEN" ToRole="PHIEUSUACHUA" />
+          <NavigationProperty Name="PHIEUSUACHUA" Relationship="Self.FK__PHIEUTHUT__MaPSC__3EDC53F0" FromRole="PHIEUTHUTIEN" ToRole="PHIEUSUACHUA" />
         </EntityType>
         <EntityType Name="THAMSO">
           <Key>
@@ -523,8 +523,8 @@
           <Property Name="MaTN" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="Thang" Type="Int32" Nullable="false" />
           <Property Name="Nam" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="NOIDUNGNHAPKHOes" Relationship="Self.FK__NOIDUNGNHA__MaTN__75A278F5" FromRole="THANGNAM" ToRole="NOIDUNGNHAPKHO" />
-          <NavigationProperty Name="PHIEUDOANHSOes" Relationship="Self.FK__PHIEUDOANH__MaTN__59063A47" FromRole="THANGNAM" ToRole="PHIEUDOANHSO" />
+          <NavigationProperty Name="NOIDUNGNHAPKHOes" Relationship="Self.FK__NOIDUNGNHA__MaTN__345EC57D" FromRole="THANGNAM" ToRole="NOIDUNGNHAPKHO" />
+          <NavigationProperty Name="PHIEUDOANHSOes" Relationship="Self.FK__PHIEUDOANH__MaTN__17C286CF" FromRole="THANGNAM" ToRole="PHIEUDOANHSO" />
         </EntityType>
         <EntityType Name="TIENCONG">
           <Key>
@@ -533,7 +533,7 @@
           <Property Name="MaTienCong" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="TenTienCong" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="TienCong1" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <NavigationProperty Name="CT_TIENCONG" Relationship="Self.FK__CT_TIENCO__MaTie__6B24EA82" FromRole="TIENCONG" ToRole="CT_TIENCONG" />
+          <NavigationProperty Name="CT_TIENCONG" Relationship="Self.FK__CT_TIENCO__MaTie__29E1370A" FromRole="TIENCONG" ToRole="CT_TIENCONG" />
         </EntityType>
         <EntityType Name="TIEPNHAN">
           <Key>
@@ -548,8 +548,8 @@
           <Property Name="NgayTiepNhan" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="TienNo" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="HIEUXE" Relationship="Self.FK__TIEPNHAN__MaHieu__4CA06362" FromRole="TIEPNHAN" ToRole="HIEUXE" />
-          <NavigationProperty Name="PHIEUSUACHUAs" Relationship="Self.FK__PHIEUSUAC__MaTie__5CD6CB2B" FromRole="TIEPNHAN" ToRole="PHIEUSUACHUA" />
+          <NavigationProperty Name="HIEUXE" Relationship="Self.FK__TIEPNHAN__MaHieu__0B5CAFEA" FromRole="TIEPNHAN" ToRole="HIEUXE" />
+          <NavigationProperty Name="PHIEUSUACHUAs" Relationship="Self.FK__PHIEUSUAC__MaTie__1B9317B3" FromRole="TIEPNHAN" ToRole="PHIEUSUACHUA" />
         </EntityType>
         <EntityType Name="VATTU">
           <Key>
@@ -559,11 +559,11 @@
           <Property Name="TenVatTu" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="SoLuong" Type="Int32" />
           <Property Name="DonGia" Type="Decimal" Precision="19" Scale="4" />
-          <NavigationProperty Name="BAOCAOTONs" Relationship="Self.FK__BAOCAOTON__MaVat__7C4F7684" FromRole="VATTU" ToRole="BAOCAOTON" />
-          <NavigationProperty Name="CT_VATTU" Relationship="Self.FK__CT_VATTU__MaVatT__628FA481" FromRole="VATTU" ToRole="CT_VATTU" />
-          <NavigationProperty Name="NOIDUNGNHAPKHOes" Relationship="Self.FK__NOIDUNGNH__MaVat__74AE54BC" FromRole="VATTU" ToRole="NOIDUNGNHAPKHO" />
+          <NavigationProperty Name="BAOCAOTONs" Relationship="Self.FK__BAOCAOTON__MaVat__3B0BC30C" FromRole="VATTU" ToRole="BAOCAOTON" />
+          <NavigationProperty Name="CT_VATTU" Relationship="Self.FK__CT_VATTU__MaVatT__214BF109" FromRole="VATTU" ToRole="CT_VATTU" />
+          <NavigationProperty Name="NOIDUNGNHAPKHOes" Relationship="Self.FK__NOIDUNGNH__MaVat__336AA144" FromRole="VATTU" ToRole="NOIDUNGNHAPKHO" />
         </EntityType>
-        <Association Name="FK__BAOCAOTON__MaVat__7C4F7684">
+        <Association Name="FK__BAOCAOTON__MaVat__3B0BC30C">
           <End Role="VATTU" Type="Self.VATTU" Multiplicity="1" />
           <End Role="BAOCAOTON" Type="Self.BAOCAOTON" Multiplicity="*" />
           <ReferentialConstraint>
@@ -575,7 +575,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CT_TIENCO__MaPSC__6A30C649">
+        <Association Name="FK__CT_TIENCO__MaPSC__28ED12D1">
           <End Role="PHIEUSUACHUA" Type="Self.PHIEUSUACHUA" Multiplicity="1" />
           <End Role="CT_TIENCONG" Type="Self.CT_TIENCONG" Multiplicity="*" />
           <ReferentialConstraint>
@@ -587,7 +587,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CT_TIENCO__MaTie__6B24EA82">
+        <Association Name="FK__CT_TIENCO__MaTie__29E1370A">
           <End Role="TIENCONG" Type="Self.TIENCONG" Multiplicity="1" />
           <End Role="CT_TIENCONG" Type="Self.CT_TIENCONG" Multiplicity="*" />
           <ReferentialConstraint>
@@ -599,7 +599,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CT_VATTU__MaPSC__6383C8BA">
+        <Association Name="FK__CT_VATTU__MaPSC__22401542">
           <End Role="PHIEUSUACHUA" Type="Self.PHIEUSUACHUA" Multiplicity="1" />
           <End Role="CT_VATTU" Type="Self.CT_VATTU" Multiplicity="*" />
           <ReferentialConstraint>
@@ -611,7 +611,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CT_VATTU__MaVatT__628FA481">
+        <Association Name="FK__CT_VATTU__MaVatT__214BF109">
           <End Role="VATTU" Type="Self.VATTU" Multiplicity="1" />
           <End Role="CT_VATTU" Type="Self.CT_VATTU" Multiplicity="*" />
           <ReferentialConstraint>
@@ -623,7 +623,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__NOIDUNGDO__MaHie__06CD04F7">
+        <Association Name="FK__NOIDUNGDO__MaHie__4589517F">
           <End Role="HIEUXE" Type="Self.HIEUXE" Multiplicity="1" />
           <End Role="NOIDUNGDOANHSO" Type="Self.NOIDUNGDOANHSO" Multiplicity="*" />
           <ReferentialConstraint>
@@ -635,7 +635,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__TIEPNHAN__MaHieu__4CA06362">
+        <Association Name="FK__TIEPNHAN__MaHieu__0B5CAFEA">
           <End Role="HIEUXE" Type="Self.HIEUXE" Multiplicity="1" />
           <End Role="TIEPNHAN" Type="Self.TIEPNHAN" Multiplicity="*" />
           <ReferentialConstraint>
@@ -647,7 +647,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__NOIDUNGDO__MaPDS__05D8E0BE">
+        <Association Name="FK__NOIDUNGDO__MaPDS__44952D46">
           <End Role="PHIEUDOANHSO" Type="Self.PHIEUDOANHSO" Multiplicity="1" />
           <End Role="NOIDUNGDOANHSO" Type="Self.NOIDUNGDOANHSO" Multiplicity="*" />
           <ReferentialConstraint>
@@ -659,7 +659,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__NOIDUNGNH__MaPNK__73BA3083">
+        <Association Name="FK__NOIDUNGNH__MaPNK__32767D0B">
           <End Role="PHIEUNHAPKHO" Type="Self.PHIEUNHAPKHO" Multiplicity="1" />
           <End Role="NOIDUNGNHAPKHO" Type="Self.NOIDUNGNHAPKHO" Multiplicity="*" />
           <ReferentialConstraint>
@@ -671,7 +671,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__NOIDUNGNH__MaVat__74AE54BC">
+        <Association Name="FK__NOIDUNGNH__MaVat__336AA144">
           <End Role="VATTU" Type="Self.VATTU" Multiplicity="1" />
           <End Role="NOIDUNGNHAPKHO" Type="Self.NOIDUNGNHAPKHO" Multiplicity="*" />
           <ReferentialConstraint>
@@ -683,7 +683,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__NOIDUNGNHA__MaTN__75A278F5">
+        <Association Name="FK__NOIDUNGNHA__MaTN__345EC57D">
           <End Role="THANGNAM" Type="Self.THANGNAM" Multiplicity="1" />
           <End Role="NOIDUNGNHAPKHO" Type="Self.NOIDUNGNHAPKHO" Multiplicity="*" />
           <ReferentialConstraint>
@@ -695,7 +695,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PHIEUDOANH__MaTN__59063A47">
+        <Association Name="FK__PHIEUDOANH__MaTN__17C286CF">
           <End Role="THANGNAM" Type="Self.THANGNAM" Multiplicity="1" />
           <End Role="PHIEUDOANHSO" Type="Self.PHIEUDOANHSO" Multiplicity="*" />
           <ReferentialConstraint>
@@ -707,7 +707,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PHIEUSUAC__MaTie__5CD6CB2B">
+        <Association Name="FK__PHIEUSUAC__MaTie__1B9317B3">
           <End Role="TIEPNHAN" Type="Self.TIEPNHAN" Multiplicity="1" />
           <End Role="PHIEUSUACHUA" Type="Self.PHIEUSUACHUA" Multiplicity="*" />
           <ReferentialConstraint>
@@ -719,7 +719,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PHIEUTHUT__MaPSC__00200768">
+        <Association Name="FK__PHIEUTHUT__MaPSC__3EDC53F0">
           <End Role="PHIEUSUACHUA" Type="Self.PHIEUSUACHUA" Multiplicity="1" />
           <End Role="PHIEUTHUTIEN" Type="Self.PHIEUTHUTIEN" Multiplicity="*" />
           <ReferentialConstraint>
@@ -747,59 +747,59 @@
           <EntitySet Name="TIENCONGs" EntityType="Self.TIENCONG" />
           <EntitySet Name="TIEPNHANs" EntityType="Self.TIEPNHAN" />
           <EntitySet Name="VATTUs" EntityType="Self.VATTU" />
-          <AssociationSet Name="FK__BAOCAOTON__MaVat__7C4F7684" Association="Self.FK__BAOCAOTON__MaVat__7C4F7684">
+          <AssociationSet Name="FK__BAOCAOTON__MaVat__3B0BC30C" Association="Self.FK__BAOCAOTON__MaVat__3B0BC30C">
             <End Role="VATTU" EntitySet="VATTUs" />
             <End Role="BAOCAOTON" EntitySet="BAOCAOTONs" />
           </AssociationSet>
-          <AssociationSet Name="FK__CT_TIENCO__MaPSC__6A30C649" Association="Self.FK__CT_TIENCO__MaPSC__6A30C649">
+          <AssociationSet Name="FK__CT_TIENCO__MaPSC__28ED12D1" Association="Self.FK__CT_TIENCO__MaPSC__28ED12D1">
             <End Role="PHIEUSUACHUA" EntitySet="PHIEUSUACHUAs" />
             <End Role="CT_TIENCONG" EntitySet="CT_TIENCONG" />
           </AssociationSet>
-          <AssociationSet Name="FK__CT_TIENCO__MaTie__6B24EA82" Association="Self.FK__CT_TIENCO__MaTie__6B24EA82">
+          <AssociationSet Name="FK__CT_TIENCO__MaTie__29E1370A" Association="Self.FK__CT_TIENCO__MaTie__29E1370A">
             <End Role="TIENCONG" EntitySet="TIENCONGs" />
             <End Role="CT_TIENCONG" EntitySet="CT_TIENCONG" />
           </AssociationSet>
-          <AssociationSet Name="FK__CT_VATTU__MaPSC__6383C8BA" Association="Self.FK__CT_VATTU__MaPSC__6383C8BA">
+          <AssociationSet Name="FK__CT_VATTU__MaPSC__22401542" Association="Self.FK__CT_VATTU__MaPSC__22401542">
             <End Role="PHIEUSUACHUA" EntitySet="PHIEUSUACHUAs" />
             <End Role="CT_VATTU" EntitySet="CT_VATTU" />
           </AssociationSet>
-          <AssociationSet Name="FK__CT_VATTU__MaVatT__628FA481" Association="Self.FK__CT_VATTU__MaVatT__628FA481">
+          <AssociationSet Name="FK__CT_VATTU__MaVatT__214BF109" Association="Self.FK__CT_VATTU__MaVatT__214BF109">
             <End Role="VATTU" EntitySet="VATTUs" />
             <End Role="CT_VATTU" EntitySet="CT_VATTU" />
           </AssociationSet>
-          <AssociationSet Name="FK__NOIDUNGDO__MaHie__06CD04F7" Association="Self.FK__NOIDUNGDO__MaHie__06CD04F7">
+          <AssociationSet Name="FK__NOIDUNGDO__MaHie__4589517F" Association="Self.FK__NOIDUNGDO__MaHie__4589517F">
             <End Role="HIEUXE" EntitySet="HIEUXEs" />
             <End Role="NOIDUNGDOANHSO" EntitySet="NOIDUNGDOANHSOes" />
           </AssociationSet>
-          <AssociationSet Name="FK__TIEPNHAN__MaHieu__4CA06362" Association="Self.FK__TIEPNHAN__MaHieu__4CA06362">
+          <AssociationSet Name="FK__TIEPNHAN__MaHieu__0B5CAFEA" Association="Self.FK__TIEPNHAN__MaHieu__0B5CAFEA">
             <End Role="HIEUXE" EntitySet="HIEUXEs" />
             <End Role="TIEPNHAN" EntitySet="TIEPNHANs" />
           </AssociationSet>
-          <AssociationSet Name="FK__NOIDUNGDO__MaPDS__05D8E0BE" Association="Self.FK__NOIDUNGDO__MaPDS__05D8E0BE">
+          <AssociationSet Name="FK__NOIDUNGDO__MaPDS__44952D46" Association="Self.FK__NOIDUNGDO__MaPDS__44952D46">
             <End Role="PHIEUDOANHSO" EntitySet="PHIEUDOANHSOes" />
             <End Role="NOIDUNGDOANHSO" EntitySet="NOIDUNGDOANHSOes" />
           </AssociationSet>
-          <AssociationSet Name="FK__NOIDUNGNH__MaPNK__73BA3083" Association="Self.FK__NOIDUNGNH__MaPNK__73BA3083">
+          <AssociationSet Name="FK__NOIDUNGNH__MaPNK__32767D0B" Association="Self.FK__NOIDUNGNH__MaPNK__32767D0B">
             <End Role="PHIEUNHAPKHO" EntitySet="PHIEUNHAPKHOes" />
             <End Role="NOIDUNGNHAPKHO" EntitySet="NOIDUNGNHAPKHOes" />
           </AssociationSet>
-          <AssociationSet Name="FK__NOIDUNGNH__MaVat__74AE54BC" Association="Self.FK__NOIDUNGNH__MaVat__74AE54BC">
+          <AssociationSet Name="FK__NOIDUNGNH__MaVat__336AA144" Association="Self.FK__NOIDUNGNH__MaVat__336AA144">
             <End Role="VATTU" EntitySet="VATTUs" />
             <End Role="NOIDUNGNHAPKHO" EntitySet="NOIDUNGNHAPKHOes" />
           </AssociationSet>
-          <AssociationSet Name="FK__NOIDUNGNHA__MaTN__75A278F5" Association="Self.FK__NOIDUNGNHA__MaTN__75A278F5">
+          <AssociationSet Name="FK__NOIDUNGNHA__MaTN__345EC57D" Association="Self.FK__NOIDUNGNHA__MaTN__345EC57D">
             <End Role="THANGNAM" EntitySet="THANGNAMs" />
             <End Role="NOIDUNGNHAPKHO" EntitySet="NOIDUNGNHAPKHOes" />
           </AssociationSet>
-          <AssociationSet Name="FK__PHIEUDOANH__MaTN__59063A47" Association="Self.FK__PHIEUDOANH__MaTN__59063A47">
+          <AssociationSet Name="FK__PHIEUDOANH__MaTN__17C286CF" Association="Self.FK__PHIEUDOANH__MaTN__17C286CF">
             <End Role="THANGNAM" EntitySet="THANGNAMs" />
             <End Role="PHIEUDOANHSO" EntitySet="PHIEUDOANHSOes" />
           </AssociationSet>
-          <AssociationSet Name="FK__PHIEUSUAC__MaTie__5CD6CB2B" Association="Self.FK__PHIEUSUAC__MaTie__5CD6CB2B">
+          <AssociationSet Name="FK__PHIEUSUAC__MaTie__1B9317B3" Association="Self.FK__PHIEUSUAC__MaTie__1B9317B3">
             <End Role="TIEPNHAN" EntitySet="TIEPNHANs" />
             <End Role="PHIEUSUACHUA" EntitySet="PHIEUSUACHUAs" />
           </AssociationSet>
-          <AssociationSet Name="FK__PHIEUTHUT__MaPSC__00200768" Association="Self.FK__PHIEUTHUT__MaPSC__00200768">
+          <AssociationSet Name="FK__PHIEUTHUT__MaPSC__3EDC53F0" Association="Self.FK__PHIEUTHUT__MaPSC__3EDC53F0">
             <End Role="PHIEUSUACHUA" EntitySet="PHIEUSUACHUAs" />
             <End Role="PHIEUTHUTIEN" EntitySet="PHIEUTHUTIENs" />
           </AssociationSet>
