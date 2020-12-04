@@ -36,11 +36,28 @@ namespace BrotherGara.Controllers
             return View(pHIEUTHUTIEN);
         }
 
+        private string CreateIdAuto()
+        {
+            int id_num = 1;
+            if (db.PHIEUTHUTIENs.Count() != 0)
+            {
+                var phieu_last = db.PHIEUTHUTIENs.OrderByDescending(p => p.MaPTT).FirstOrDefault();
+                id_num = Int32.Parse((phieu_last.MaPTT).Substring(3)) + 1;
+            }
+            string id = id_num.ToString();
+            while (id.Length < 5)
+                id = "0" + id;
+            return "PTT" + id;
+        }
+
         // GET: PHIEUTHUTIENs/Create
         public ActionResult Create()
         {
             ViewBag.MaPSC = new SelectList(db.PHIEUSUACHUAs, "MaPSC", "MaPSC");
-            return View();
+
+            PHIEUTHUTIEN model = new PHIEUTHUTIEN();
+            model.MaPTT = CreateIdAuto();
+            return View(model);
         }
 
         // POST: PHIEUTHUTIENs/Create

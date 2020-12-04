@@ -35,6 +35,21 @@ namespace BrotherGara.Controllers
             return View(vATTU);
         }
 
+        private string CreateIdAuto()
+        {
+            int id_num = 1;
+            if (db.VATTUs.Count() != 0)
+            {
+                var phieu_last = db.VATTUs.OrderByDescending(p => p.MaVatTu).FirstOrDefault();
+                id_num = Int32.Parse((phieu_last.MaVatTu).Substring(2)) + 1;
+            }
+            string id = id_num.ToString();
+            while (id.Length < 6)
+                id = "0" + id;
+            return "VT" + id;
+        }
+
+
         // GET: VATTUs/Create
         public ActionResult Create()
         {
@@ -44,7 +59,11 @@ namespace BrotherGara.Controllers
             if (countSoVatTu >= soVatTuToiDa)
                 ViewBag.loi = true;
 
-            return View();
+            VATTU model = new VATTU();
+            model.MaVatTu = CreateIdAuto();
+            model.SoLuong = 0;
+            model.DonGia = 0;
+            return View(model);
         }
 
         // POST: VATTUs/Create

@@ -18,7 +18,7 @@
             <div class="form-group">
                 <div class="control-label col-md-12">Mã chi tiết vật tư</div>
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.MaCTVT, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.MaCTVT, new { htmlAttributes = new { @class = "form-control", @readonly = true } })
                     @Html.ValidationMessageFor(model => model.MaCTVT, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -32,20 +32,20 @@
             </div>
 
             <div class="form-group">
-                <div class="control-label col-md-12">Tên vật tư</div>
+                <div class="control-label col-md-12">Mã vật tư</div>
                 <div class="col-md-10">
                     @Html.DropDownList("MaVatTu", null, htmlAttributes: new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.MaVatTu, "", new { @class = "text-danger" })
                 </div>
             </div>
 
-            <div class="form-group">
+            @*<div class="form-group">
                 <div class="control-label col-md-12">Đơn giá</div>
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.DonGia, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.DonGia, "", new { @class = "text-danger" })
                 </div>
-            </div>
+            </div>*@
 
             <div class="form-group">
                 <div class="control-label col-md-12">Số lượng</div>
@@ -55,13 +55,13 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            @*<div class="form-group">
                 <div class="control-label col-md-12">Thành tiền</div>
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.ThanhTien, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.ThanhTien, "", new { @class = "text-danger" })
                 </div>
-            </div>
+            </div>*@
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10" style="display: block; margin: auto">

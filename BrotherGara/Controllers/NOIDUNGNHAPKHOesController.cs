@@ -39,6 +39,19 @@ namespace BrotherGara.Controllers
             }
             return View(nOIDUNGNHAPKHO);
         }
+        private string CreateIdAuto()
+        {
+            int id_num = 1;
+            if (db.NOIDUNGNHAPKHOes.Count() != 0)
+            {
+                var phieu_last = db.NOIDUNGNHAPKHOes.OrderByDescending(p => p.MaNDNK).FirstOrDefault();
+                id_num = Int32.Parse((phieu_last.MaNDNK).Substring(4)) + 1;
+            }
+            string id = id_num.ToString();
+            while (id.Length < 4)
+                id = "0" + id;
+            return "NDNK" + id;
+        }
 
         // GET: NOIDUNGNHAPKHOes/Create
         public ActionResult Create(string id)
@@ -47,6 +60,7 @@ namespace BrotherGara.Controllers
             ViewBag.MaTN = new SelectList(db.THANGNAMs, "MaTN", "MaTN");
             NOIDUNGNHAPKHO model = new NOIDUNGNHAPKHO();
             model.MaPNK = id;
+            model.MaNDNK = CreateIdAuto();
             ViewBag.MaPNK = id;
             return View(model);
         }
@@ -60,6 +74,7 @@ namespace BrotherGara.Controllers
         {
             if (ModelState.IsValid)
             {
+                nOIDUNGNHAPKHO.ThanhTien = 0;
                 db.NOIDUNGNHAPKHOes.Add(nOIDUNGNHAPKHO);
                 db.SaveChanges();
                 return RedirectToAction("Index", new { @id = nOIDUNGNHAPKHO.MaPNK });

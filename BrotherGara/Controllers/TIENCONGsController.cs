@@ -35,6 +35,21 @@ namespace BrotherGara.Controllers
             return View(tIENCONG);
         }
 
+        private string CreateIdAuto()
+        {
+            int id_num = 1;
+            if (db.TIENCONGs.Count() != 0)
+            {
+                var phieu_last = db.TIENCONGs.OrderByDescending(p => p.MaTienCong).FirstOrDefault();
+                id_num = Int32.Parse((phieu_last.MaTienCong).Substring(2)) + 1;
+            }
+            string id = id_num.ToString();
+            while (id.Length < 6)
+                id = "0" + id;
+            return "TC" + id;
+        }
+
+
         // GET: TIENCONGs/Create
         public ActionResult Create()
         {
@@ -44,7 +59,9 @@ namespace BrotherGara.Controllers
             if (countTIENCONGs >= soTienCongToiDa)
                 ViewBag.loi = true;
 
-            return View();
+            TIENCONG model = new TIENCONG();
+            model.MaTienCong = CreateIdAuto();
+            return View(model);
         }
 
         // POST: TIENCONGs/Create

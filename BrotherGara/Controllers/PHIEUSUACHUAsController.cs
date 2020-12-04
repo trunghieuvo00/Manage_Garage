@@ -36,16 +36,36 @@ namespace BrotherGara.Controllers
             return View(pHIEUSUACHUA);
         }
 
+        private string CreateIdAuto()
+        {
+            int id_num = 1;
+            if (db.PHIEUSUACHUAs.Count() != 0)
+            {
+                var phieu_last = db.PHIEUSUACHUAs.OrderByDescending(p => p.MaPSC).FirstOrDefault();
+                id_num = Int32.Parse((phieu_last.MaPSC).Substring(3)) + 1;
+            }
+            string id = id_num.ToString();
+            while (id.Length < 5)
+                id = "0" + id;
+            return "PSC" + id;
+        }
+
         // GET: PHIEUSUACHUAs/Create
         public ActionResult Create()
         {
             ViewBag.MaTiepNhan = new SelectList(db.TIEPNHANs, "MaTiepNhan", "MaTiepNhan");
-            return View();
+
+            PHIEUSUACHUA model = new PHIEUSUACHUA();
+            model.MaPSC = CreateIdAuto();
+            return View(model);
         }
         public ActionResult CreateWithID(string id)
         {
             ViewBag.MaTiepNhan = new SelectList(db.TIEPNHANs.Where(t => t.MaTiepNhan == id), "MaTiepNhan", "MaTiepNhan", db.TIEPNHANs.Where(t => t.MaTiepNhan == id));
-            return View();
+
+            PHIEUSUACHUA model = new PHIEUSUACHUA();
+            model.MaPSC = CreateIdAuto();
+            return View(model);
         }
 
         // POST: PHIEUSUACHUAs/Create
@@ -53,10 +73,11 @@ namespace BrotherGara.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaPSC,MaTiepNhan,NgaySuaChua,TongTien")] PHIEUSUACHUA pHIEUSUACHUA)
+        public ActionResult Create([Bind(Include = "MaPSC,MaTiepNhan,NgaySuaChua")] PHIEUSUACHUA pHIEUSUACHUA)
         {
             if (ModelState.IsValid)
             {
+                pHIEUSUACHUA.TongTien = 0;
                 db.PHIEUSUACHUAs.Add(pHIEUSUACHUA);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -67,10 +88,11 @@ namespace BrotherGara.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateWithID([Bind(Include = "MaPSC,MaTiepNhan,NgaySuaChua,TongTien")] PHIEUSUACHUA pHIEUSUACHUA)
+        public ActionResult CreateWithID([Bind(Include = "MaPSC,MaTiepNhan,NgaySuaChua")] PHIEUSUACHUA pHIEUSUACHUA)
         {
             if (ModelState.IsValid)
             {
+                pHIEUSUACHUA.TongTien = 0;
                 db.PHIEUSUACHUAs.Add(pHIEUSUACHUA);
                 db.SaveChanges();
                 return RedirectToAction("Index");

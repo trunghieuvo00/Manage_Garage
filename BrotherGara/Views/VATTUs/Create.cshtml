@@ -37,7 +37,7 @@
             <div class="form-group">
                 <div class = "control-label col-md-10">Mã vật tư</div>
                 <div class="col-md-12">
-                    @Html.EditorFor(model => model.MaVatTu, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.MaVatTu, new { htmlAttributes = new { @class = "form-control", @readonly = true } })
                     @Html.ValidationMessageFor(model => model.MaVatTu, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -53,7 +53,7 @@
             <div class="form-group">
                 <div class="control-label col-md-10">Số lượng</div>
                 <div class="col-md-12">
-                    @Html.EditorFor(model => model.SoLuong, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.SoLuong, new { htmlAttributes = new { @class = "form-control", @readonly = true } })
                     @Html.ValidationMessageFor(model => model.SoLuong, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -61,7 +61,7 @@
             <div class="form-group">
                 <div class="control-label col-md-10">Đơn giá</div>
                 <div class="col-md-12">
-                    @Html.EditorFor(model => model.DonGia, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.DonGia, new { htmlAttributes = new { @class = "form-control", @readonly = true } })
                     @Html.ValidationMessageFor(model => model.DonGia, "", new { @class = "text-danger" })
                 </div>
             </div>

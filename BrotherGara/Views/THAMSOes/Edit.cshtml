@@ -31,7 +31,7 @@
                 Giá trị
             </div>
             <div class="col-md-12">
-                @Html.EditorFor(model => model.GiaTri, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.GiaTri, new { htmlAttributes = new { @class = "form-control", @min = ViewBag.min } })
                 @Html.ValidationMessageFor(model => model.GiaTri, "", new { @class = "text-danger" })
             </div>
         </div>

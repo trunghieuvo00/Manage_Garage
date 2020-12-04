@@ -37,10 +37,26 @@ namespace BrotherGara.Controllers
             return RedirectToAction("Index", "NOIDUNGNHAPKHOes", new { @id = pHIEUNHAPKHO.MaPNK });
         }
 
+        private string CreateIdAuto()
+        {
+            int id_num = 1;
+            if (db.PHIEUNHAPKHOes.Count() != 0)
+            {
+                var phieu_last = db.PHIEUNHAPKHOes.OrderByDescending(p => p.MaPNK).FirstOrDefault();
+                id_num = Int32.Parse((phieu_last.MaPNK).Substring(3)) + 1;
+            }
+            string id = id_num.ToString();
+            while (id.Length < 5)
+                id = "0" + id;
+            return "PNK" + id;
+        }
+
         // GET: PHIEUNHAPKHOes/Create
         public ActionResult Create()
         {
-            return View();
+            PHIEUNHAPKHO model = new PHIEUNHAPKHO();
+            model.MaPNK = CreateIdAuto();
+            return View(model);
         }
 
         // POST: PHIEUNHAPKHOes/Create
@@ -48,7 +64,7 @@ namespace BrotherGara.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaPNK,NgayNhapKho,TongChi")] PHIEUNHAPKHO pHIEUNHAPKHO)
+        public ActionResult Create([Bind(Include = "MaPNK,NgayNhapKho")] PHIEUNHAPKHO pHIEUNHAPKHO)
         {
             if (ModelState.IsValid)
             {

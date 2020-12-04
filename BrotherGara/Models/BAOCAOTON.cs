@@ -17,7 +17,8 @@ namespace BrotherGara.Models
         public string MaVatTu { get; set; }
         public string MaTN { get; set; }
         public Nullable<int> TonDau { get; set; }
-        public Nullable<int> PhatSinh { get; set; }
+        public Nullable<int> PhatSinhNhap { get; set; }
+        public Nullable<int> PhatSinhXuat { get; set; }
         public Nullable<int> TonCuoi { get; set; }
     
         public virtual VATTU VATTU { get; set; }

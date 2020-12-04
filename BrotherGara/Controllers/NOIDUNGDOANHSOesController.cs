@@ -36,7 +36,19 @@ namespace BrotherGara.Controllers
             }
             return View(nOIDUNGDOANHSO);
         }
-
+        private string CreateIdAuto()
+        {
+            int id_num = 1;
+            if (db.NOIDUNGDOANHSOes.Count() != 0)
+            {
+                var phieu_last = db.NOIDUNGDOANHSOes.OrderByDescending(p => p.MaNDDS).FirstOrDefault();
+                id_num = Int32.Parse((phieu_last.MaNDDS).Substring(4)) + 1;
+            }
+            string id = id_num.ToString();
+            while (id.Length < 4)
+                id = "0" + id;
+            return "NDDS" + id;
+        }
         // GET: NOIDUNGDOANHSOes/Create
         public ActionResult Create()
         {
@@ -44,7 +56,9 @@ namespace BrotherGara.Controllers
             ViewBag.MaPDS = new SelectList(db.PHIEUDOANHSOes, "MaPDS", "MaTN");
             ViewBag.MaPTT = new SelectList(db.PHIEUTHUTIENs, "MaPTT", "MaPSC");
 
-            return View();
+            NOIDUNGDOANHSO model = new NOIDUNGDOANHSO();
+            model.MaNDDS = CreateIdAuto();
+            return View(model);
         }
 
         // POST: NOIDUNGDOANHSOes/Create

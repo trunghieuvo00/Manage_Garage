@@ -57,6 +57,24 @@ namespace BrotherGara.Controllers
 
             return View(tHAMSO);
         }
+        private int getNumRow(string id)
+        {
+            int num = 0;
+            switch(id)
+            {
+                case "SoLoaiHieuXe":
+                    num = db.HIEUXEs.Count();
+                    break;
+                case "SoLoaiTienCong":
+                    num = db.TIENCONGs.Count();
+                    break;
+                case "SoLoaiVatTu":
+                    num = db.VATTUs.Count();
+                    break;
+            }
+            return num;
+        }
+
 
         // GET: THAMSOes/Edit/5
         public ActionResult Edit(string id)
@@ -70,6 +88,7 @@ namespace BrotherGara.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.min = getNumRow(id);
             return View(tHAMSO);
         }
 

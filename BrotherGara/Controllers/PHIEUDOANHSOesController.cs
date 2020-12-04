@@ -1,4 +1,5 @@
 ﻿using BrotherGara.Models;
+using System;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
@@ -33,12 +34,26 @@ namespace BrotherGara.Controllers
             }
             return View(pHIEUDOANHSO);
         }
-
+        private string CreateIdAuto()
+        {
+            int id_num = 1;
+            if (db.PHIEUDOANHSOes.Count() != 0)
+            {
+                var phieu_last = db.PHIEUDOANHSOes.OrderByDescending(p => p.MaPDS).FirstOrDefault();
+                id_num = Int32.Parse((phieu_last.MaPDS).Substring(3)) + 1;
+            }
+            string id = id_num.ToString();
+            while (id.Length < 5)
+                id = "0" + id;
+            return "PDS" + id;
+        }
         // GET: PHIEUDOANHSOes/Create
         public ActionResult Create()
         {
             ViewBag.MaTN = new SelectList(db.THANGNAMs, "MaTN", "MaTN");
-            return View();
+            PHIEUDOANHSO model = new PHIEUDOANHSO();
+            model.MaPDS = CreateIdAuto();
+            return View(model);
         }
 
         // POST: PHIEUDOANHSOes/Create

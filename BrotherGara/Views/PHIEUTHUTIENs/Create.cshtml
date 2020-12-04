@@ -19,7 +19,7 @@
             <div class="form-group col-md-12">
                 Mã phiếu thu tiền
                 <div class="">
-                    @Html.EditorFor(model => model.MaPTT, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.MaPTT, new { htmlAttributes = new { @class = "form-control", @readonly = true } })
                     @Html.ValidationMessageFor(model => model.MaPTT, "", new { @class = "text-danger" })
                 </div>
             </div>

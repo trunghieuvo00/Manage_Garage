@@ -35,7 +35,19 @@ namespace BrotherGara.Controllers
             }
             return View(cT_TIENCONG);
         }
-
+        private string CreateIdAuto()
+        {
+            int id_num = 1;
+            if (db.CT_TIENCONG.Count() != 0)
+            {
+                var phieu_last = db.CT_TIENCONG.OrderByDescending(p => p.MaCTTC).FirstOrDefault();
+                id_num = Int32.Parse((phieu_last.MaCTTC).Substring(4)) + 1;
+            }
+            string id = id_num.ToString();
+            while (id.Length < 4)
+                id = "0" + id;
+            return "CTTC" + id;
+        }
         // GET: CT_TIENCONG/Create
         public ActionResult Create(string id)
         {
@@ -43,6 +55,7 @@ namespace BrotherGara.Controllers
             ViewBag.MaTienCong = new SelectList(db.TIENCONGs, "MaTienCong", "TenTienCong");
             CT_TIENCONG model = new CT_TIENCONG();
             model.MaPSC = id;
+            model.MaCTTC = CreateIdAuto();
             return View(model);
         }
 
@@ -68,7 +81,9 @@ namespace BrotherGara.Controllers
         {
             ViewBag.MaPSC = new SelectList(db.PHIEUSUACHUAs.Where(t => t.MaPSC == id), "MaPSC", "MaPSC", db.PHIEUSUACHUAs.Where(t => t.MaPSC == id));
             ViewBag.MaTienCong = new SelectList(db.TIENCONGs, "MaTienCong", "TenTienCong");
-            return View();
+            CT_TIENCONG model = new CT_TIENCONG();
+            model.MaCTTC = CreateIdAuto();
+            return View(model);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]

@@ -19,7 +19,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.MaPNK, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MaPNK, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.MaPNK, new { htmlAttributes = new { @class = "form-control", @readonly = true } })
                 @Html.ValidationMessageFor(model => model.MaPNK, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -27,17 +27,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.NgayNhapKho, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.NgayNhapKho, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.NgayNhapKho, new { htmlAttributes = new { @class = "form-control", @type = "datetime-local"} })
                 @Html.ValidationMessageFor(model => model.NgayNhapKho, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @*@Html.LabelFor(model => model.TongChi, htmlAttributes: new { @class = "control-label col-md-2" })*@
-            <div class="col-md-10">
-                @*@Html.EditorFor(model => model.TongChi, new { htmlAttributes = new { @class = "form-control" } })*@
-                @Html.HiddenFor(model => model.TongChi)
-                @Html.ValidationMessageFor(model => model.TongChi, "", new { @class = "text-danger" })
             </div>
         </div>
 

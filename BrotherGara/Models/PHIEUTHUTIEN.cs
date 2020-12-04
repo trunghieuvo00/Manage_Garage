@@ -14,20 +14,11 @@ namespace BrotherGara.Models
     
     public partial class PHIEUTHUTIEN
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PHIEUTHUTIEN()
-        {
-            this.NOIDUNGDOANHSOes = new HashSet<NOIDUNGDOANHSO>();
-        }
-    
         public string MaPTT { get; set; }
         public string MaPSC { get; set; }
         public System.DateTime NgayThuTien { get; set; }
         public decimal SoTienThu { get; set; }
-        public Nullable<decimal> ConNo { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NOIDUNGDOANHSO> NOIDUNGDOANHSOes { get; set; }
         public virtual PHIEUSUACHUA PHIEUSUACHUA { get; set; }
     }
 }

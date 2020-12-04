@@ -34,7 +34,19 @@ namespace BrotherGara.Controllers
             }
             return View(hIEUXE);
         }
-
+        private string CreateIdAuto()
+        {
+            int id_num = 1;
+            if (db.HIEUXEs.Count() != 0)
+            {
+                var phieu_last = db.HIEUXEs.OrderByDescending(p => p.MaHieuXe).FirstOrDefault();
+                id_num = Int32.Parse((phieu_last.MaHieuXe).Substring(2)) + 1;
+            }
+            string id = id_num.ToString();
+            while (id.Length < 6)
+                id = "0" + id;
+            return "HX" + id;
+        }
         // GET: HIEUXEs/Create
         public ActionResult Create()
         {
@@ -43,8 +55,9 @@ namespace BrotherGara.Controllers
             int soXeToiDa = db.THAMSOes.ToList().ElementAt(0).GiaTri;
             if (countHIEUXEs >= soXeToiDa)
                 ViewBag.loi = true;
-
-            return View();
+            HIEUXE model = new HIEUXE();
+            model.MaHieuXe = CreateIdAuto();
+            return View(model);
         }
 
         // POST: HIEUXEs/Create

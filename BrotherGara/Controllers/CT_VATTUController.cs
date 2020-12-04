@@ -35,13 +35,26 @@ namespace BrotherGara.Controllers
             }
             return View(cT_VATTU);
         }
-
+        private string CreateIdAuto()
+        {
+            int id_num = 1;
+            if (db.CT_VATTU.Count() != 0)
+            {
+                var phieu_last = db.CT_VATTU.OrderByDescending(p => p.MaCTVT).FirstOrDefault();
+                id_num = Int32.Parse((phieu_last.MaCTVT).Substring(4)) + 1;
+            }
+            string id = id_num.ToString();
+            while (id.Length < 4)
+                id = "0" + id;
+            return "CTVT" + id;
+        }
         // GET: CT_VATTU/Create
         public ActionResult Create(string id)
         {
             ViewBag.MaPSC = id;
             ViewBag.MaVatTu = new SelectList(db.VATTUs, "MaVatTu", "TenVatTu");
             CT_VATTU model = new CT_VATTU();
+            model.MaCTVT = CreateIdAuto();
             model.MaPSC = id;
             return View(model);
         }
@@ -49,7 +62,10 @@ namespace BrotherGara.Controllers
         {
             ViewBag.MaPSC = new SelectList(db.PHIEUSUACHUAs.Where(t => t.MaPSC == id), "MaPSC", "MaPSC", db.PHIEUSUACHUAs.Where(t => t.MaPSC == id));
             ViewBag.MaVatTu = new SelectList(db.VATTUs, "MaVatTu", "TenVatTu");
-            return View();
+
+            CT_VATTU model = new CT_VATTU();
+            model.MaCTVT = CreateIdAuto();
+            return View(model);
         }
 
         // POST: CT_VATTU/Create
