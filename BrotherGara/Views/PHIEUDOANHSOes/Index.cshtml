@@ -10,8 +10,18 @@
         <h2>Doanh số tháng</h2>
 
         <p>
-            @Html.ActionLink("Tạo phiếu doanh số", "Create")
-            @Html.ActionLink("Tạo chi tiết doanh số", "Create", "NOIDUNGDOANHSOes")
+
+            <button class="btn btn-success ml-4 mb-3 brighter" style="width: 200px; color:azure; background-color: #61a0ed">
+                <i class="fas fa-plus" style="color: azure">
+                    @Html.ActionLink("Tạo phiếu doanh số", "Create", null, new { @style = "color: #ffffff; font-family: Nunito;" })
+                </i>
+            </button>
+            <button class="btn btn-success ml-4 mb-3 brighter" style="width: 250px; color:azure; background-color: #61a0ed">
+                <i class="fas fa-plus" style="color: azure">
+                    @Html.ActionLink("Tạo chi tiết doanh số", "Create", "NOIDUNGDOANHSOes", null, new { @style = "color: #ffffff; font-family: Nunito;" })
+                </i>
+            </button>
+            @*@Html.ActionLink("Tạo chi tiết doanh số", "Create", "NOIDUNGDOANHSOes")*@
         </p>
         <div class="card shadow mb-4">
             <div class="card-header py-3">

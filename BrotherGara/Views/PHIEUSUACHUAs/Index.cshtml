@@ -5,17 +5,17 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<button class="btn btn-success ml-4 mb-3 brighter" style="width: 250px; color:azure; background-color: #61a0ed">
+    <i class="fas fa-plus" style="color: azure">
+        @Html.ActionLink("Thêm phiếu sửa chữa", "Create", null, new { @style = "color: #ffffff; font-family: Nunito;" })
+    </i>
+</button>
+
 <div id="content">
     <div class="container-fluid">
-        <h2>Phiếu sửa chữa</h2>
-
-        <p>
-            @Html.ActionLink("Thêm Phiếu sửa chữa", "Create", null, new { @class = "btn btn-success" })
-        </p>
-        @Html.ActionLink("Quay lại", null, null, null, new { href = Request.UrlReferrer })
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Danh sách phiếu sửa chữa</h6>
+                <h3 class="m-0 font-weight-bold text-primary">Danh sách phiếu sửa chữa</h3>
             </div>
             <div class="card-body">
                 <div class="table-responsive">

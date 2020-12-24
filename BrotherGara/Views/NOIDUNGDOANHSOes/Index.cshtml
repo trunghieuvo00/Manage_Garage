@@ -4,77 +4,78 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<button class="btn btn-success ml-4 mb-3 brighter" style="width: 250px; color:azure; background-color: #61a0ed">
+    <i class="fas fa-plus" style="color: azure">
+        @Html.ActionLink("Thêm nội dung doanh số", "Create", null, new { @style = "color: #ffffff; font-family: Nunito;" })
+    </i>
+</button>
 
 <div id="content">
     <div class="container-fluid">
-        <h2>Index</h2>
-
-        <p>
-            @Html.ActionLink("Create New", "Create")
-        </p>
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Danh sách vật tư</h6>
+                <h3 class="m-0 font-weight-bold text-primary">Danh sách hiệu xe</h3>
             </div>
             <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                        <thead>
-                            <tr>
-                                <th>
-                                    Mã PDS
-                                </th>
-                                <th>
-                                    Mã hiệu xe
-                                </th>
-                                <th>
-                                    Tên hiệu xe
-                                </th>
-                                <th>
-                                    Số lượt sửa
-                                </th>
-                                <th>
-                                    Thành tiền
-                                </th>
-                                <th>
-                                    Tỉ lệ
-                                </th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var item in Model)
-                            {
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
                                 <tr>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.MaPDS)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.MaHieuXe)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.HIEUXE.TenHieuXe)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.SoLuotSua)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.ThanhTien)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.TiLe)
-                                    </td>
-                                    <td>
-                                        @*@Html.ActionLink("Edit", "Edit", new { id=item.MaNDDS }) |*@
-                                        @*@Html.ActionLink("Details", "Details", new { id=item.MaNDDS }) |*@
-                                        @Html.ActionLink("Delete", "Delete", new { id = item.MaNDDS }, htmlAttributes: new { @class = "btn btn-danger" })
-                                    </td>
+                                    <th>
+                                        Mã PDS
+                                    </th>
+                                    <th>
+                                        Mã hiệu xe
+                                    </th>
+                                    <th>
+                                        Tên hiệu xe
+                                    </th>
+                                    <th>
+                                        Số lượt sửa
+                                    </th>
+                                    <th>
+                                        Thành tiền
+                                    </th>
+                                    <th>
+                                        Tỉ lệ
+                                    </th>
+                                    <th></th>
                                 </tr>
-                            }
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.MaPDS)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.MaHieuXe)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.HIEUXE.TenHieuXe)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.SoLuotSua)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ThanhTien)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TiLe)
+                                        </td>
+                                        <td>
+                                            @*@Html.ActionLink("Edit", "Edit", new { id=item.MaNDDS }) |*@
+                                            @*@Html.ActionLink("Details", "Details", new { id=item.MaNDDS }) |*@
+                                            @Html.ActionLink("Delete", "Delete", new { id = item.MaNDDS }, htmlAttributes: new { @class = "btn btn-danger" })
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 </div>

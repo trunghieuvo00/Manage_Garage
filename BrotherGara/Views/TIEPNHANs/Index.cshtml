@@ -1,20 +1,21 @@
-﻿@model IEnumerable<BrotherGara.Models.TIEPNHAN>
+﻿    @model IEnumerable<BrotherGara.Models.TIEPNHAN>
 
 @{
     ViewBag.Title = "Phiếu tiếp nhận";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<button class="btn btn-success ml-4 mb-3 brighter" style="width: 250px; color:azure; background-color: #61a0ed">
+    <i class="fas fa-plus" style="color: azure">
+        @Html.ActionLink("Thêm phiếu tiếp nhận", "Create", null, new { @style = "color: #ffffff; font-family: Nunito;" })
+    </i>
+</button>
+
 <div id="content">
     <div class="container-fluid">
-        <h2>Phiếu tiếp nhận</h2>
-
-        <p>
-            @Html.ActionLink("Thêm Phiếu tiếp nhận", "Create", null, new { @class = "btn btn-success" })
-        </p>
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Danh sách Phiếu tiếp nhận</h6>
+                <h3 class="m-0 font-weight-bold text-primary">Danh sách phiếu tiếp nhận</h3>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
