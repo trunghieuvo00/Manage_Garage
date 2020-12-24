@@ -15,9 +15,10 @@ namespace BrotherGara.Controllers
         private BrothersGarageEntities db = new BrothersGarageEntities();
 
         // GET: CT_VATTU
-        public ActionResult Index()
+        public ActionResult Index(string id)
         {
-            var cT_VATTU = db.CT_VATTU;
+            var cT_VATTU = db.CT_VATTU.Where(x => x.MaPSC == id);
+            ViewBag.MaPSC = id;
             return View(cT_VATTU.ToList());
         }
 

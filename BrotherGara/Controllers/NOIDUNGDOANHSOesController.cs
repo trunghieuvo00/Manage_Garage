@@ -83,7 +83,7 @@ namespace BrotherGara.Controllers
             {
                 nOIDUNGDOANHSO.SoLuotSua = data.Count();
                 nOIDUNGDOANHSO.ThanhTien = data.Sum(x => x.tongTien);
-                nOIDUNGDOANHSO.TiLe = (double)(data.Sum(x => x.tongTien) / tongdoanhthu);
+                nOIDUNGDOANHSO.TiLe = tongdoanhthu == 0 ? 1 : (double)(data.Sum(x => x.tongTien) / tongdoanhthu);
             }
 
             if (ModelState.IsValid)

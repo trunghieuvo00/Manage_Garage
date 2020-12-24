@@ -15,9 +15,10 @@ namespace BrotherGara.Controllers
         private BrothersGarageEntities db = new BrothersGarageEntities();
 
         // GET: CT_TIENCONG
-        public ActionResult Index()
+        public ActionResult Index(string id)
         {
-            var cT_TIENCONG = db.CT_TIENCONG;
+            var cT_TIENCONG = db.CT_TIENCONG.Where(x => x.MaPSC == id);
+            ViewBag.MaPSC = id;
             return View(cT_TIENCONG.ToList());
         }
 
