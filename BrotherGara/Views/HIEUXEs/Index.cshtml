@@ -5,40 +5,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@*<h2>Index</h2>
-
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                Mã hiệu xe
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TenHieuXe)
-            </th>
-            <th></th>
-        </tr>
-
-    @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MaHieuXe)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TenHieuXe)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.MaHieuXe }) |
-            @Html.ActionLink("Details", "Details", new { id = item.MaHieuXe }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.MaHieuXe })
-        </td>
-    </tr>
-    }
-
-    </table>*@
-
 <button class="btn btn-success ml-4 mb-3 brighter" style="width: 200px; color:azure; background-color: #61a0ed">
     <i class="fas fa-plus" style="color: azure">
         @Html.ActionLink("Thêm hiệu xe", "Create", null, new { @style = "color: #ffffff; font-family: Nunito;" })
