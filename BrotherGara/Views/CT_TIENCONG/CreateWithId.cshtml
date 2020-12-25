@@ -5,56 +5,64 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>CreateWithId</h2>
-<h1 class="text-center font-weight-bold" style="color: black">Thêm chi tiền công</h1>
+<h1 class="text-center font-weight-bold" style="color: black">Thêm chi tiết tiền công</h1>
 
 <div class="container-fluid">
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
 
-        <div class="form-horizontal" style="width: 500px; display: block; margin:auto">
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                <div class="control-label con-12">Mã chi tiết tiền công</div>
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.MaCTTC, new { htmlAttributes = new { @class = "form-control", @readonly = true } })
-                    @Html.ValidationMessageFor(model => model.MaCTTC, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="control-label con-12">Mã phiếu sửa chữa</div>
-                <div class="col-md-10">
-                    @Html.DropDownList("MaPSC", null, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.MaPSC, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="control-label con-12">Tên tiền công</div>
-                <div class="col-md-10">
-                    @Html.DropDownList("MaTienCong", null, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.MaTienCong, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            @*<div class="form-group">
-                <div class="control-label con-12">Tiền công</div>
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.TienCong, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.TienCong, "", new { @class = "text-danger" })
-                </div>
-            </div>*@
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10" style="display: block; margin: auto">
-                    <input type="submit" value="Create" class="btn btn-default" />
-                    @Html.ActionLink("Quay lại", null, null, null, new { href = Request.UrlReferrer, @class = "btn btn-primary" })
-                </div>
+    <div class="form-horizontal" style="width: 500px; display: block; margin:auto">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <div class="control-label col-md-10">Mã chi tiết tiền công</div>
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.MaCTTC, new { htmlAttributes = new { @class = "form-control", @readonly = true } })
+                @Html.ValidationMessageFor(model => model.MaCTTC, "", new { @class = "text-danger" })
             </div>
         </div>
+
+        <div class="form-group">
+            <div class="control-label col-md-10">Mã phiếu sửa chữa</div>
+            <div class="col-md-12">
+                @Html.DropDownList("MaPSC", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.MaPSC, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="control-label col-md-10 ">Tên tiền công</div>
+            <div class="col-md-12">
+                @Html.DropDownList("MaTienCong", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.MaTienCong, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*<div class="form-group">
+            <div class="control-label con-12">Tiền công</div>
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.TienCong, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TienCong, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+        @*<div class="form-group">
+            <div class="col-md-offset-2 col-md-12" style="display: block; margin: auto">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>*@
+
+        <div class="form-group col-md-12" style="display: flex; flex-direction: row; justify-content: center">
+            <div style="display: inline">
+                <input type="submit" value="Tạo" class="btn btn-success m-2 brighter" style="width: 150px; color:azure; background-color: #61a0ed" />
+            </div>
+            <div style="display: inline">
+                @Html.ActionLink("Quay lại", null, null, null, new { @class = "btn btn-success m-2 brighter", @style = "width: 150px; color:azure; background-color: #ed4747" })
+            </div>
+
+        </div>
+    </div>
     }
 
 </div>
